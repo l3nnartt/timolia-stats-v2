@@ -13,6 +13,7 @@
     "sequelize": "^6.5.0",
     "sqlite3": "^5.0.2",
     "topgg-autoposter": "^1.1.6",
+    "util": "^0.12.3",
     "xvfb": "^0.4.0"
   }
 }

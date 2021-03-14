@@ -1,6 +1,11 @@
+const fs = require('fs');
+
 module.exports = {
 	name: 'message',
 	execute(message) {
-		console.log(`${message.author.tag} in #${message.channel.name} sent: ${message.content}`);
+		const timestamp = new Date();
+		fs.appendFile(`./debug.log`, `timestamp: ${timestamp};\tAuthor: ${message.author.tag};\tChannel: #${message.channel.name};\tContent: ${message.content};\n`, function (err) {
+			if (err) throw err;
+		});
 	},
 };

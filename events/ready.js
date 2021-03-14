@@ -28,7 +28,7 @@ module.exports = {
 		console.log(content)
 		console.log('└────────────────────────────────────────────────────────────────────────────────────┘	')
 
-		// ❯ Rich Presence/RPC
+		/* ❯ Rich Presence/RPC
 		setInterval(() => {
 			util.status(`timolia.de`, { port: 25565, enableSRV: true, timeout: 5000, protocolVersion: 47 })
 	  			.then((response) => {
@@ -44,5 +44,6 @@ module.exports = {
 				);
 			});
   		},15000);
+		*/
 	},
 };
