@@ -4,9 +4,7 @@ module.exports = {
 	name: 'ping',
 	description: 'Ping',
 	cooldown: 5,
-	execute(message, client) {
-		console.log(client.user.username)
-
+	execute(message, args, client) {
 		const embed1 = new Discord.MessageEmbed()
 			.setTitle(`${client.user.username} • Ping`)
 			.setDescription(`Pinging...!`)
@@ -22,5 +20,5 @@ module.exports = {
             .setColor("#4680FC");
 			sent.edit(embed2);
 		});
-	},
+	}
 };
