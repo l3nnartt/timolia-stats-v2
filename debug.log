@@ -1,0 +1,84 @@
+timestamp: Sun Mar 14 2021 19:10:01 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Mr_Milchmann_LP#0001;	Channel: #commands;	Content: So siehts aus;
+timestamp: Sun Mar 14 2021 19:10:03 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Mr_Milchmann_LP#0001;	Channel: #commands;	Content: Genau;
+timestamp: Sun Mar 14 2021 19:16:29 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Milchkasten;	Server: Mr_Milchmann_LP#0001;	Channel: #commands;	Content: !help;
+timestamp: Sun Mar 14 2021 19:17:06 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Milchkasten;	Server: Mr_Milchmann_LP#0001;	Channel: #commands;	Content: !help;
+timestamp: Sun Mar 14 2021 19:17:07 GMT+0100 (Mitteleuropäische Normalzeit);	Author: null;	Server: Milchkasten#2229;	Channel: #undefined;	Content: Hier ist eine Liste mit allen Befehlen:
+ping, serverlist, serverinfo, stats, userinfo, args-info, avatar, help, reload, server, member
+
+Du kannst `!help [command name]` benutzen um genaures zu Erfahren!;
+timestamp: Sun Mar 14 2021 19:17:07 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Milchkasten;	Server: Milchkasten#2229;	Channel: #commands;	Content: <@!398101340322136075>, Du hast eine DM mit allen Befehlen bekommen!;
+timestamp: Sun Mar 14 2021 19:18:54 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Milchkasten;	Server: Mr_Milchmann_LP#0001;	Channel: #memberlog;	Content: Danke das du funktionierst;
+timestamp: Sun Mar 14 2021 19:19:45 GMT+0100 (Mitteleuropäische Normalzeit);	Author: null;	Server: Mr_Milchmann_LP#0001;	Channel: #undefined;	Content: okay;
+timestamp: Sun Mar 14 2021 19:19:52 GMT+0100 (Mitteleuropäische Normalzeit);	Author: null;	Server: Mr_Milchmann_LP#0001;	Channel: #undefined;	Content: macht kein sinn;
+timestamp: Sun Mar 14 2021 19:20:34 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Mr_Milchmann_LP#0001;	Server: null;	Channel: #undefined;	Content: test;
+timestamp: Sun Mar 14 2021 19:20:44 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Mr_Milchmann_LP#0001;	Server: null;	Channel: #undefined;	Content: okay das passt;
+timestamp: Sun Mar 14 2021 20:42:47 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Mr_Milchmann_LP#0001;	Server: Milchkasten;	Channel: #commands;	Content: !ping;
+timestamp: Sun Mar 14 2021 20:42:47 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Milchkasten#2229;	Server: Milchkasten;	Channel: #commands;	Content: Pinging...;
+timestamp: Sun Mar 14 2021 20:45:38 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Mr_Milchmann_LP#0001;	Server: Milchkasten;	Channel: #commands;	Content: !ping;
+timestamp: Sun Mar 14 2021 20:45:38 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Milchkasten#2229;	Server: Milchkasten;	Channel: #commands;	Content: ;
+timestamp: Sun Mar 14 2021 20:46:07 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Mr_Milchmann_LP#0001;	Server: Milchkasten;	Channel: #commands;	Content: !ping;
+timestamp: Sun Mar 14 2021 20:46:07 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Milchkasten#2229;	Server: Milchkasten;	Channel: #commands;	Content: ;
+timestamp: Sun Mar 14 2021 20:46:37 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Mr_Milchmann_LP#0001;	Server: Milchkasten;	Channel: #commands;	Content: !ping;
+timestamp: Sun Mar 14 2021 20:46:37 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Milchkasten#2229;	Server: Milchkasten;	Channel: #commands;	Content: ;
+timestamp: Sun Mar 14 2021 20:48:56 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Mr_Milchmann_LP#0001;	Server: Milchkasten;	Channel: #commands;	Content: !ping;
+timestamp: Sun Mar 14 2021 20:48:57 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Milchkasten#2229;	Server: Milchkasten;	Channel: #commands;	Content: ;
+timestamp: Sun Mar 14 2021 20:49:32 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Mr_Milchmann_LP#0001;	Server: Milchkasten;	Channel: #commands;	Content: +server;
+timestamp: Sun Mar 14 2021 20:49:32 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Timolia Statistiken#3231;	Server: Milchkasten;	Channel: #commands;	Content: ;
+timestamp: Sun Mar 14 2021 20:49:36 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Mr_Milchmann_LP#0001;	Server: Milchkasten;	Channel: #commands;	Content: !server;
+timestamp: Sun Mar 14 2021 20:49:36 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Milchkasten#2229;	Server: Milchkasten;	Channel: #commands;	Content: Server-Name: Milchkasten
+Total Members: 91;
+timestamp: Sun Mar 14 2021 20:49:41 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Mr_Milchmann_LP#0001;	Server: Milchkasten;	Channel: #commands;	Content: !servers;
+timestamp: Sun Mar 14 2021 20:49:50 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Mr_Milchmann_LP#0001;	Server: Milchkasten;	Channel: #commands;	Content: !serverlist;
+timestamp: Sun Mar 14 2021 20:49:50 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Milchkasten#2229;	Server: Milchkasten;	Channel: #commands;	Content: ;
+timestamp: Sun Mar 14 2021 20:50:23 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Mr_Milchmann_LP#0001;	Server: Milchkasten;	Channel: #commands;	Content: !stats 1vs1 L3nnart_;
+timestamp: Sun Mar 14 2021 20:50:24 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Milchkasten#2229;	Server: Milchkasten;	Channel: #commands;	Content: ;
+timestamp: Sun Mar 14 2021 20:51:30 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Mr_Milchmann_LP#0001;	Server: Milchkasten;	Channel: #commands;	Content: !serverlist;
+timestamp: Sun Mar 14 2021 20:51:31 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Milchkasten#2229;	Server: Milchkasten;	Channel: #commands;	Content: ;
+timestamp: Sun Mar 14 2021 20:51:34 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Mr_Milchmann_LP#0001;	Server: Milchkasten;	Channel: #commands;	Content: !stats;
+timestamp: Sun Mar 14 2021 20:51:34 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Milchkasten#2229;	Server: Milchkasten;	Channel: #commands;	Content: ;
+timestamp: Sun Mar 14 2021 20:51:40 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Mr_Milchmann_LP#0001;	Server: Milchkasten;	Channel: #commands;	Content: !stats 1vs1 L3nnart_;
+timestamp: Sun Mar 14 2021 20:51:40 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Milchkasten#2229;	Server: Milchkasten;	Channel: #commands;	Content: ;
+timestamp: Sun Mar 14 2021 20:52:50 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Mr_Milchmann_LP#0001;	Server: Milchkasten;	Channel: #commands;	Content: !stats 1vs1 L3nnart_;
+timestamp: Sun Mar 14 2021 20:52:50 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Milchkasten#2229;	Server: Milchkasten;	Channel: #commands;	Content: ;
+timestamp: Sun Mar 14 2021 20:52:53 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Mr_Milchmann_LP#0001;	Server: Milchkasten;	Channel: #commands;	Content: !ping;
+timestamp: Sun Mar 14 2021 20:52:53 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Milchkasten#2229;	Server: Milchkasten;	Channel: #commands;	Content: ;
+timestamp: Sun Mar 14 2021 20:59:35 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Mr_Milchmann_LP#0001;	Server: null;	Channel: #undefined;	Content: !ping;
+timestamp: Sun Mar 14 2021 20:59:35 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Milchkasten#2229;	Server: null;	Channel: #undefined;	Content: ;
+timestamp: Sun Mar 14 2021 20:59:49 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Mr_Milchmann_LP#0001;	Server: null;	Channel: #undefined;	Content: !serverlist;
+timestamp: Sun Mar 14 2021 20:59:49 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Milchkasten#2229;	Server: null;	Channel: #undefined;	Content: ;
+timestamp: Sun Mar 14 2021 21:02:52 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Mr_Milchmann_LP#0001;	Server: null;	Channel: #undefined;	Content: !ping;
+timestamp: Sun Mar 14 2021 21:02:52 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Milchkasten#2229;	Server: null;	Channel: #undefined;	Content: ;
+timestamp: Sun Mar 14 2021 21:02:55 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Mr_Milchmann_LP#0001;	Server: null;	Channel: #undefined;	Content: halts maul;
+timestamp: Sun Mar 14 2021 21:03:09 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Mr_Milchmann_LP#0001;	Server: null;	Channel: #undefined;	Content: !stats 1vs1 L3nnart_;
+timestamp: Sun Mar 14 2021 21:03:10 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Milchkasten#2229;	Server: null;	Channel: #undefined;	Content: ;
+timestamp: Sun Mar 14 2021 21:10:21 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Mr_Milchmann_LP#0001;	Server: null;	Channel: #undefined;	Content: !stat hdanospädhasui+;
+timestamp: Sun Mar 14 2021 21:10:26 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Mr_Milchmann_LP#0001;	Server: null;	Channel: #undefined;	Content: !stats 1vs1 aihg#iasüigjhsg;
+timestamp: Sun Mar 14 2021 21:10:27 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Milchkasten#2229;	Server: null;	Channel: #undefined;	Content: ;
+timestamp: Sun Mar 14 2021 21:39:06 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Mr_Milchmann_LP#0001;	Server: null;	Channel: #undefined;	Content: !help;
+timestamp: Sun Mar 14 2021 21:39:06 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Milchkasten#2229;	Server: null;	Channel: #undefined;	Content: Hier ist eine Liste mit allen Befehlen:
+ping, serverlist, serverinfo, stats, userinfo, args-info, avatar, help, reload, server, member
+
+Du kannst `!help [command name]` benutzen um genaures zu Erfahren!;
+timestamp: Sun Mar 14 2021 21:39:08 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Mr_Milchmann_LP#0001;	Server: null;	Channel: #undefined;	Content: !stats;
+timestamp: Sun Mar 14 2021 21:39:08 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Milchkasten#2229;	Server: null;	Channel: #undefined;	Content: ;
+timestamp: Sun Mar 14 2021 21:39:14 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Mr_Milchmann_LP#0001;	Server: null;	Channel: #undefined;	Content: !ping;
+timestamp: Sun Mar 14 2021 21:39:14 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Milchkasten#2229;	Server: null;	Channel: #undefined;	Content: ;
+timestamp: Sun Mar 14 2021 22:05:02 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Mr_Milchmann_LP#0001;	Server: Milchkasten;	Channel: #lennart-max-stuff;	Content: ;
+timestamp: Sun Mar 14 2021 22:05:32 GMT+0100 (Mitteleuropäische Normalzeit);	Author: 𝓚𝓵𝓪𝓽𝓼𝓬𝓱𝔂#0016;	Server: Milchkasten;	Channel: #lennart-max-stuff;	Content: Lol;
+timestamp: Sun Mar 14 2021 22:06:07 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Mr_Milchmann_LP#0001;	Server: Milchkasten;	Channel: #commands;	Content: !ping;
+timestamp: Sun Mar 14 2021 22:06:07 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Milchkasten#2229;	Server: Milchkasten;	Channel: #commands;	Content: ;
+timestamp: Sun Mar 14 2021 22:06:14 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Mr_Milchmann_LP#0001;	Server: Milchkasten;	Channel: #commands;	Content: !ping;
+timestamp: Sun Mar 14 2021 22:06:14 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Milchkasten#2229;	Server: Milchkasten;	Channel: #commands;	Content: ;
+timestamp: Sun Mar 14 2021 22:06:25 GMT+0100 (Mitteleuropäische Normalzeit);	Author: 𝓚𝓵𝓪𝓽𝓼𝓬𝓱𝔂#0016;	Server: Milchkasten;	Channel: #commands;	Content: Pong;
+timestamp: Sun Mar 14 2021 22:06:41 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Mr_Milchmann_LP#0001;	Server: Milchkasten;	Channel: #commands;	Content: !ping;
+timestamp: Sun Mar 14 2021 22:06:42 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Milchkasten#2229;	Server: Milchkasten;	Channel: #commands;	Content: ;
+timestamp: Sun Mar 14 2021 22:10:33 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Mr_Milchmann_LP#0001;	Server: null;	Channel: #undefined;	Content: !ping;
+timestamp: Sun Mar 14 2021 22:10:33 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Milchkasten#2229;	Server: null;	Channel: #undefined;	Content: ;
+timestamp: Sun Mar 14 2021 22:10:57 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Mr_Milchmann_LP#0001;	Server: null;	Channel: #undefined;	Content: !ping;
+timestamp: Sun Mar 14 2021 22:10:57 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Milchkasten#2229;	Server: null;	Channel: #undefined;	Content: ;
+timestamp: Sun Mar 14 2021 22:11:18 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Mr_Milchmann_LP#0001;	Server: null;	Channel: #undefined;	Content: !ping;
+timestamp: Sun Mar 14 2021 22:11:18 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Milchkasten#2229;	Server: null;	Channel: #undefined;	Content: ;
+timestamp: Sun Mar 14 2021 22:11:28 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Mr_Milchmann_LP#0001;	Server: null;	Channel: #undefined;	Content: !ping;
+timestamp: Sun Mar 14 2021 22:11:28 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Milchkasten#2229;	Server: null;	Channel: #undefined;	Content: ;
+timestamp: Sun Mar 14 2021 22:11:46 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Mr_Milchmann_LP#0001;	Server: null;	Channel: #undefined;	Content: !ping;
+timestamp: Sun Mar 14 2021 22:11:46 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Milchkasten#2229;	Server: null;	Channel: #undefined;	Content: ;

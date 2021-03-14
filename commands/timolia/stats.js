@@ -1,6 +1,5 @@
 const Discord = require("discord.js");
 const DOMParser = require('dom-parser');
-const mc = require("mc-stats");
 const fetch = require('node-fetch');
 
 module.exports = {
@@ -9,7 +8,7 @@ module.exports = {
     args: true,
     usage: '[Spielmodus] [Spieler]',
 	execute(message, args, client) {
-
+        //Crawler Stats
         function getStats(url, statName, onData) {
             const data = new Array();
             fetch(url).then(function (response) {
@@ -37,7 +36,7 @@ module.exports = {
                 // Error Message/Keine Stats
                 console.warn('FEHLER:', err);
                 var embed = new Discord.MessageEmbed()
-                .setTitle("Timolia Statistiken • Fehler")
+                .setTitle(`${client.user.username} • Fehler`)
                 .setDescription('Es konnten keine Statistiken für diesen Spieler im ausgewählten Spielmodus gefunden werden.')
                 .setTimestamp(message.createdAt)
                 .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
@@ -46,16 +45,17 @@ module.exports = {
             });
         }
 
+        //Embed Stats
         let Gamemode = (args[0]).toLowerCase();
         let Spieler = (args[1]);
         let Spielerkopf = "https://cravatar.eu/helmavatar/" + Spieler + "/60.png"
         const url = "https://timolia.de/stats/" + Spieler;
         getStats(url, `${Gamemode}`, data => {
-            var embed = new Discord.MessageEmbed()
+            const embed = new Discord.MessageEmbed()
                 .setAuthor(`${Gamemode} • ${Spieler}`, client.user.displayAvatarURL(), `${url}`)
                 .setThumbnail(`${Spielerkopf}`)
                 .setTimestamp(message.createdAt)
-                .setFooter("Timolia Statistiken", client.user.displayAvatarURL())
+                .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
                 .setColor("#4680FC");
             data.forEach(d => {
                 embed.addFields(

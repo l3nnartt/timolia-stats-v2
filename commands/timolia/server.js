@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 module.exports = {
 	name: 'serverlist',
 	description: 'Eine Liste aller Timolia Community Server',
-	execute(message, args, client) {
+	execute(message, client) {
         var embed = new Discord.MessageEmbed()
         .setTitle(`${client.user.username} • Community Server`)
         .setThumbnail(client.user.displayAvatarURL())
