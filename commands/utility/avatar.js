@@ -1,7 +1,7 @@
 module.exports = {
 	name: 'avatar',
 	description: 'Gibt dir den Avatar von dir selbst oder einem bestimmten Benutzer.',
-	aliases: ['icon', 'pfp'],
+	aliases: ['icon', 'pb'],
 	usage: '[@User]',
 	execute(message) {
 		if (!message.mentions.users.size) {

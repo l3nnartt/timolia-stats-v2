@@ -4,7 +4,7 @@ const fetch = require('node-fetch');
 
 module.exports = {
 	name: 'stats',
-	description: 'Gibt dir Statistiken von einem Spieler',
+	description: 'Gibt dir die Statistiken von einem Spieler',
     args: true,
     usage: '[Spielmodus] [Spieler]',
 	execute(message, args, client) {

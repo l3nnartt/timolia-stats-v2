@@ -11,9 +11,9 @@ module.exports = {
 		const { commands } = message.client;
 
 		if (!args.length) {
-			data.push('Hier ist eine Liste mit allen Befehlen:');
-			data.push(commands.map(command => command.name).join(', '));
-			data.push(`\nDu kannst \`${prefix}help [command name]\` benutzen um genaures zu Erfahren!`);
+			data.push('Hier ist eine Liste mit allen Befehlen:\n');
+			data.push(commands.map(command => command.name).join('\n'));
+			data.push(`\nDu kannst \`${prefix}help [command]\` benutzen um genaures zu Erfahren!`);
 
 			return message.author.send(data, { split: true })
 				.then(() => {
@@ -37,7 +37,7 @@ module.exports = {
 
 		if (command.aliases) data.push(`**Aliases:** ${command.aliases.join(', ')}`);
 		if (command.description) data.push(`**Beschreibung:** ${command.description}`);
-		if (command.usage) data.push(`**Benutzung:** ${prefix}${command.name} ${command.usage}`);
+		if (command.usage) data.push(`**Benutzung:** \`${prefix}${command.name} ${command.usage}\``);
 
 		data.push(`**Cooldown:** ${command.cooldown || 3} Sekunde(n)`);
 
