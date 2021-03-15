@@ -2,20 +2,19 @@ const util = require('minecraft-server-util');
 const Discord = require("discord.js");
 
 module.exports = {
-	name: 'serverinfo',
-	description: 'Pingt Minecraft Server an und fragt den Status & aktuelle Spieler Zahl aus',
-	args: true,
-  usage: '[ServerIP]',
+	name: 'status',
+	description: 'Sagt dir aktuelle Informationen zum Status von Timolia',
 	execute(message, args, client) {
-		const Server = args[0].toLowerCase();
-	util.status(`${Server}`, { port: 25565, enableSRV: true, timeout: 5000, protocolVersion: 47 })
+	util.status(`timolia.de`, { port: 25565, enableSRV: true, timeout: 5000, protocolVersion: 47 })
       .then((response) => {
           var embed = new Discord.MessageEmbed()
-          .setTitle(`Timolia Statistiken • Serverinfo für ${Server}`)
+          .setTitle(`Timolia Statistiken • Status`)
+          .setThumbnail(`https://i.imgur.com/NkFEsHW.png`)
           .addFields(
             { name: `IP-Adresse:`, value: `${response.host}`, inline: true },
             { name: `Port:`, value: `${response.port}`, inline: true },
-            { name: `Aktuelle Spieler:`, value: `${response.onlinePlayers} / ${response.maxPlayers}`, inline: true })
+            { name: `Aktuelle Spieler:`, value: `${response.onlinePlayers} / ${response.maxPlayers}`, inline: true },
+            { name: `Version:`, value: `${response.version}`})
           .setTimestamp(message.createdAt)
           .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
           .setColor("#20FF00");
@@ -25,7 +24,7 @@ module.exports = {
         var embed = new Discord.MessageEmbed()
           .setTitle("Timolia Statistiken • Status")
           .addFields(
-            { name: `OFFLINE`, value: `Der Server ist zur Zeit nicht erreichbar.` })
+            { name: `FEHLER/OFFLINE`, value: `Timolia ist zur Zeit nicht erreichbar!\nBitte versuche in 5 Minuten erneut.` })
           .setTimestamp(message.createdAt)
           .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
           .setColor("#FF0000");

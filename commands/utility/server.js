@@ -1,5 +1,5 @@
 module.exports = {
-	name: 'server',
+	name: 'serverinfo',
 	description: 'Informationen zum Discordserver',
 	guildOnly: true,
 	execute(message) {
