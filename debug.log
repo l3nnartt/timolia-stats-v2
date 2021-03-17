@@ -225,3 +225,25 @@ timestamp: Mon Mar 15 2021 03:34:24 GMT+0100 (Mitteleuropäische Normalzeit);	Au
 timestamp: Mon Mar 15 2021 03:34:25 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Milchkasten#2229;	Server: Milchkasten;	Channel: #commands;	Content: ;
 timestamp: Mon Mar 15 2021 03:34:46 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Mr_Milchmann_LP#0001;	Server: Milchkasten;	Channel: #commands;	Content: !info;
 timestamp: Mon Mar 15 2021 03:34:47 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Milchkasten#2229;	Server: Milchkasten;	Channel: #commands;	Content: ;
+timestamp: Wed Mar 17 2021 11:53:32 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Mr_Milchmann_LP#0001;	Server: Milchkasten;	Channel: #botspam;	Content: !stats 1vs1 L3nnart_;
+timestamp: Wed Mar 17 2021 11:53:33 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Milchkasten#2229;	Server: Milchkasten;	Channel: #botspam;	Content: ;
+timestamp: Wed Mar 17 2021 12:03:43 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Mr_Milchmann_LP#0001;	Server: Milchkasten;	Channel: #botspam;	Content: !help;
+timestamp: Wed Mar 17 2021 12:03:43 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Milchkasten#2229;	Server: null;	Channel: #undefined;	Content: Hier ist eine Liste mit allen Befehlen:
+
+server
+stats
+status
+top
+userinfo
+avatar
+info
+help
+invite
+ping
+reload
+serverinfo
+
+Du kannst `!help [command]` benutzen um genaures zu Erfahren!;
+timestamp: Wed Mar 17 2021 12:03:44 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Milchkasten#2229;	Server: Milchkasten;	Channel: #botspam;	Content: <@!398101340322136075>, Du hast eine DM mit allen Befehlen bekommen!;
+timestamp: Wed Mar 17 2021 12:03:54 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Mr_Milchmann_LP#0001;	Server: null;	Channel: #undefined;	Content: !stats;
+timestamp: Wed Mar 17 2021 12:03:54 GMT+0100 (Mitteleuropäische Normalzeit);	Author: Milchkasten#2229;	Server: null;	Channel: #undefined;	Content: ;

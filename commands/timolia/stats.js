@@ -66,6 +66,7 @@ module.exports = {
                     }
                 );
             })
+            console.log(data)
             message.channel.send(embed)
         });
     }
