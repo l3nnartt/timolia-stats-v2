@@ -8,5 +8,5 @@ ap.on('posted', () => {
   console.log('Posted stats to Top.gg!')
 })
 
-manager.on('shardCreate', shard => console.log(`Launched shard ${shard.id}`));
+manager.on('shardCreate', shard => console.log(`Shard ${shard.id} erfolgreich gestartet`));
 manager.spawn();
