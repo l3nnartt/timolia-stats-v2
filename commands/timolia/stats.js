@@ -52,7 +52,8 @@ module.exports = {
         const url = "https://timolia.de/stats/" + Spieler;
         getStats(url, `${Gamemode}`, data => {
             const embed = new Discord.MessageEmbed()
-                .setAuthor(`${Gamemode} • ${Spieler}`, client.user.displayAvatarURL(), `${url}`)
+                .setTitle(`${Gamemode} • ${Spieler}`)
+                .setURL(`${url}`)
                 .setThumbnail(`${Spielerkopf}`)
                 .setTimestamp(message.createdAt)
                 .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
@@ -66,7 +67,6 @@ module.exports = {
                     }
                 );
             })
-            console.log(data)
             message.channel.send(embed)
         });
     }

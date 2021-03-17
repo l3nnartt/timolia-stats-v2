@@ -8,10 +8,12 @@ module.exports = {
     usage: '[Spieler]',
 	execute(message, args, client) {
         var Spieler = (args[0]);
-        var Spielerkopf = "https://cravatar.eu/helmhead/" + Spieler + "/140.png"
+        var Spielerkopf = "https://mineskin.de/armor/body/" + Spieler + "/200.png"
+        var url = "https://www.timolia.de/stats/" + Spieler
         mc.timolia(Spieler).then(result => {
         const embed = new Discord.MessageEmbed()
-            .setTitle(`Timolia Statistiken • Userinfo für ${result.name}`)
+            .setTitle(`${client.user.username} • Userinfo für ${result.name}`)
+            .setURL(`${url}`)
             .setThumbnail(`${Spielerkopf}`)
             .addFields(
                 { name: `Name`, value: `${result.name}` },
@@ -22,7 +24,7 @@ module.exports = {
             .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
             .setColor("#4680FC");
         const notfound = new Discord.MessageEmbed()
-            .setTitle("Timolia Statistiken • Fehler")
+            .setTitle(`${client.user.username} • Fehler`)
             .setDescription(`Es konnten keine Statistiken für **${Spieler}** gefunden werden.`)
             .setTimestamp(message.createdAt)
             .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
