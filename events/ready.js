@@ -45,10 +45,5 @@ module.exports = {
 				);
 			});
   		},15000);
-
-		// ❯ Übermittlung von Bot Statistiken an Top.gg
-		const AutoPoster = require('topgg-autoposter')
-		const ap = AutoPoster('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjgwMzU3OTIxNDU1MzAyMjQ4NCIsImJvdCI6dHJ1ZSwiaWF0IjoxNjEzNzI2NjI0fQ.tvA6ZpZjg8A754VBcq4ct6b66ZmpuWXodapsTHrPX-U', client)
-		ap.on('posted', () => {})
 	},
 };
