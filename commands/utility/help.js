@@ -1,4 +1,5 @@
 const { prefix } = require('../../config.json');
+const Discord = require("discord.js");
 
 module.exports = {
 	name: 'help',
@@ -6,31 +7,34 @@ module.exports = {
 	aliases: ['commands'],
 	usage: '[command name]',
 	cooldown: 5,
-	execute(message, args) {
+	execute(message, args, client) {
 		const data = [];
 		const { commands } = message.client;
 
 		if (!args.length) {
-			data.push('Hier ist eine Liste mit allen Befehlen:\n');
-			data.push(commands.map(command => command.name).join('\n'));
-			data.push(`\nDu kannst \`${prefix}help [command]\` benutzen um genaures zu Erfahren!`);
-
-			return message.author.send(data, { split: true })
-				.then(() => {
-					if (message.channel.type === 'dm') return;
-					message.reply('Du hast eine DM mit allen Befehlen bekommen!');
-				})
-				.catch(error => {
-					console.error(`Could not send help DM to ${message.author.tag}.\n`, error);
-					message.reply('Ich kann dir keine Direktnachricht aufgrund deiner Privatsphäre Einstellungen schicken!');
-				});
+			const description = data.push(commands.map(command => command.name).join('\n'));
+			const helpEmbed = new Discord.MessageEmbed()
+				.setTitle('Hier ist eine Liste mit allen Befehlen:')
+				.setDescription(data)
+				.setTimestamp(message.createdAt)
+            	.setFooter(`Benutze "${prefix}help [command]" um mehr zu Erfahren!`, client.user.displayAvatarURL())
+            	.setColor("#4680FC");
+			return message.author.send(helpEmbed)
+			.then(() => {
+				if (message.channel.type === 'dm') return;
+				message.reply('Du hast eine DM mit allen Befehlen bekommen!');
+			})
+			.catch(error => {
+				console.error(`Could not send help DM to ${message.author.tag}.\n`, error);
+				message.reply('Ich kann dir keine Direktnachricht aufgrund deiner Privatsphäre Einstellungen schicken!');
+			});
 		}
 
 		const name = args[0].toLowerCase();
 		const command = commands.get(name) || commands.find(c => c.aliases && c.aliases.includes(name));
 
 		if (!command) {
-			return message.reply('Das ist kein existierender Befehl!');
+			return message.reply('Dieser Befehl existiert nicht');
 		}
 
 		data.push(`**Name:** ${command.name}`);
