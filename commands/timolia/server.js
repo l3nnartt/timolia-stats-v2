@@ -10,6 +10,7 @@ module.exports = {
         .addFields(
           { name: 'Timolia Achievements', value: 'https://discord.gg/t9Jny6ds3E' },
           { name: 'Timolia Zeitung', value: 'https://discord.gg/ehC26pKWmZ' },
+          { name: 'Timolia Fails', value: 'https://discord.gg/cMJcCybQwR' },
           { name: 'Splun Community', value: 'https://discord.gg/RGHcweAg2b' },
           { name: 'Castles Community', value: 'https://discord.gg/dkDe6EKjNr' },
           { name: '4rena Community', value: 'https://discord.gg/7SXq2EK8EP' },

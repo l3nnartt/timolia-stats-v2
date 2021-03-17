@@ -8,7 +8,7 @@ module.exports = {
         const embed = new Discord.MessageEmbed()
             .setTitle(`${client.user.username} • Invite`)
             .setThumbnail(client.user.displayAvatarURL())
-            .setDescription('Mit dem folgendem [Link](https://bit.ly/3op4lMm) kannst du den Bot auf deinen Server einladen.')
+            .setDescription(`Mit dem folgendem [Link](https://discord.com/api/oauth2/authorize?client_id=${client.user.id}&permissions=8&scope=bot) kannst du den Bot auf deinen Server einladen.`)
             .setTimestamp(message.createdAt)
             .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
             .setColor("#4680FC");

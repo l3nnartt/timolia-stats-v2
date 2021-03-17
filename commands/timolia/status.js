@@ -17,7 +17,7 @@ module.exports = {
             { name: `Version:`, value: `${response.version}`})
           .setTimestamp(message.createdAt)
           .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
-          .setColor("#20FF00");
+          .setColor("#00FF00");
           message.channel.send(embed);
       })
       .catch((error) => {
