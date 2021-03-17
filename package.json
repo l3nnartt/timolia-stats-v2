@@ -5,6 +5,7 @@
     "dom-parser": "^0.1.6",
     "mc-stats": "^1.0.7",
     "minecraft-server-util": "^3.4.2",
+    "moment": "^2.29.1",
     "ms": "^2.1.2",
     "node-fetch": "^2.6.1",
     "os": "^0.1.1",
