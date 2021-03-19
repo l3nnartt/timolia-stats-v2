@@ -8,7 +8,6 @@ module.exports = {
     args: true,
     usage: '[Spielmodus] [Spieler]',
 	execute(message, args, client) {
-        //Crawler Stats
         function getStats(url, statName, onData) {
             const data = new Array();
             fetch(url).then(function (response) {
@@ -33,8 +32,7 @@ module.exports = {
                 });
                 onData(data);
             }).catch(function (err) {
-                // Error Message/Keine Stats
-                console.warn('FEHLER:', err);
+                console.warn('Fehler bei der Suche nach Statistiken:', err);
                 var embed = new Discord.MessageEmbed()
                 .setTitle(`${client.user.username} • Fehler`)
                 .setDescription('Es konnten keine Statistiken für diesen Spieler im ausgewählten Spielmodus gefunden werden.')
@@ -44,8 +42,6 @@ module.exports = {
                 message.channel.send(embed);
             });
         }
-
-        //Embed Stats
         let Gamemode = (args[0]).toLowerCase();
         let Spieler = (args[1]);
         let Spielerkopf = "https://cravatar.eu/helmavatar/" + Spieler + "/60.png"

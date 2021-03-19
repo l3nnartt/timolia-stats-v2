@@ -8,7 +8,6 @@ module.exports = {
     args: true,
     usage: '[Spielmodus]',
 	execute(message, args, client) {
-        // ❯ Crawler Top10
         function fetchLeaderboards(statName, limit, onData) {
             const url = `https://www.timolia.de/game/${statName.toLowerCase()}/leaderboard`;
             (async () => {
@@ -55,8 +54,6 @@ module.exports = {
             }
             onStats(stats);
         }
-
-        // ❯ Top10
         var Gamemode = (args[0]).toLowerCase();
         fetchLeaderboards(`${Gamemode}`, 10, (data) => {
           var embed = new Discord.MessageEmbed()

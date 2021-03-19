@@ -4,7 +4,7 @@ module.exports = {
 	name: 'ready',
 	once: true,
 	execute(client) {
-		// ❯ Login Konsole
+		//client.on(ready) Login-Konsole
 		console.log(' ')
 		console.log('┌──────────────────────────────────── Login ─────────────────────────────────────────┐')
 		console.log(`│ > Eingeloggt als ${client.user.tag}!                                         │`);
@@ -33,7 +33,7 @@ module.exports = {
 		console.log('└────────────────────────────────────────────────────────────────────────────────────┘    ')
 		console.log(' ')
 
-		// ❯ Rich Presence/RPC
+		//Rich Presence/RPC
 		setInterval(() => {
 			util.status(`timolia.de`, { port: 25565, enableSRV: true, timeout: 5000, protocolVersion: 47 })
 	  			.then((response) => {
