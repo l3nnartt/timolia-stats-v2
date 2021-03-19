@@ -8,7 +8,7 @@ module.exports = {
 	util.status(`timolia.de`, { port: 25565, enableSRV: true, timeout: 5000, protocolVersion: 47 })
       .then((response) => {
           var embed = new Discord.MessageEmbed()
-          .setTitle(`Timolia Statistiken • Status`)
+          .setTitle(`${client.user.username} • Status`)
           .setThumbnail(`https://i.imgur.com/NkFEsHW.png`)
           .addFields(
             { name: `IP-Adresse:`, value: `${response.host}`, inline: true },
@@ -22,9 +22,9 @@ module.exports = {
       })
       .catch((error) => {
         var embed = new Discord.MessageEmbed()
-          .setTitle("Timolia Statistiken • Status")
+          .setTitle(`${client.user.username} • Status`)
           .addFields(
-            { name: `FEHLER/OFFLINE`, value: `Timolia ist zur Zeit nicht erreichbar!\nBitte versuche in 5 Minuten erneut.` })
+            { name: `FEHLER/OFFLINE`, value: `Timolia ist zur Zeit nicht erreichbar!\nBitte versuche es in 5 Minuten erneut.` })
           .setTimestamp(message.createdAt)
           .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
           .setColor("#FF0000");

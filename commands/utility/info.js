@@ -15,7 +15,7 @@ module.exports = {
                 const totalGuilds = results[0].reduce((acc, guildCount) => acc + guildCount, 0);
                 const totalMembers = results[1].reduce((acc, memberCount) => acc + memberCount, 0);
                 const embed = new Discord.MessageEmbed()
-                    .setTitle(`${client.user.username} • Botinfo`)
+                    .setTitle(`${client.user.username} • Informationen`)
                     .setThumbnail(client.user.displayAvatarURL())
                     .addFields(
                         { name: 'Server', value: `${totalGuilds}`, inline: true },
