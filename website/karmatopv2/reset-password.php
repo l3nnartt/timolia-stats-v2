@@ -75,7 +75,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <head>
   <!--Head, import Bootstrap-->
     <meta charset="UTF-8">
-    <title>karmatop.de | Passwort Reset</title>
+    <title>Karmatop.de | Passwort Reset</title>
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://karmatop.de/">
     <meta property="og:title" content="karmatop.de - Startseite">

@@ -8,13 +8,13 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     exit;
 }
 ?>
- 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <!--Head, import Bootstrap-->
     <meta charset="UTF-8">
-    <title>karmatop.de | Controlpanel</title>
+    <title>Karmatop.de | Controlpanel</title>
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://karmatop.de/">
     <meta property="og:title" content="karmatop.de - Startseite">
@@ -49,43 +49,48 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 <!--Makes a Wrapper-->
 <div class="container">
 
-  <!--Shows Username-->
-  <div class="page-header">
-    <h1>Hallo, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>!</h1>
-  </div>
-  <!--Buttons, Control-->
-  <p>
-    <a href="reset-password.php" class="btn btn-warning">Passwort reset</a>
-    <a href="logout.php" class="btn btn-danger">Abmelden</a>
-  </p>
+  <!--Container-->
+  <br><br>
+  <div class="jumbotron">
 
-  <!--Connect to process.php-->
-  <?php require_once 'process.php'; ?>
+    <!--Shows Username-->
+    <div class="page-header">
+      <h1>Hallo, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>!</h1>
+    </div>
+    <!--Buttons, Control-->
+    <p>
+      <a href="reset-password.php" class="btn btn-warning">Passwort reset</a>
+      <a href="logout.php" class="btn btn-danger">Abmelden</a>
+    </p>
 
-  <!--New entry/CRUD-->
-  <div class="row justify-content-center">
-    <form action="process.php" method="POST">
-      <input type="hidden" name="id" value="<?php echo $id; ?>">
-      <div class="form-group">
-        <label>Spieler</label>
-        <input type="text" name="player" class="form-control" value="<?php echo $player; ?>" placeholder="Spieler" id="inputDefault">
-      </div>
-      <div class="form-group">
-        <label>Karma</label>
-        <input type="text" name="karma" class="form-control" value="<?php echo $karma; ?>" placeholder="Karma" id="inputDefault">
-      </div>
-      <div class="form-group">
-        <?php if ($update == true): ?>
-          <button class="btn btn-info" type="submit" name="update">Änderung übernehmen</button>
-        <?php else: ?>
-          <button class="btn btn-info" type="submit" name="save">Speichern</button>
-        <?php endif ?>
-      </div>
-    </form>
-  </div>
+    <!--Connect to process.php-->
+    <?php require_once 'process.php'; ?>
 
-  <!--Table/CRUD-->
-  <?php require_once 'process.php'; 
+    <!--New entry/CRUD-->
+    <div class="row justify-content-center">
+      <form action="process.php" method="POST">
+        <input type="hidden" name="id" value="<?php echo $id; ?>">
+        <div class="form-group">
+          <label>Spieler</label>
+          <input type="text" name="player" class="form-control" value="<?php echo $player; ?>" placeholder="Spieler" id="inputDefault">
+        </div>
+        <div class="form-group">
+          <label>Karma</label>
+          <input type="text" name="karma" class="form-control" value="<?php echo $karma; ?>" placeholder="Karma" id="inputDefault">
+        </div>
+        <div class="form-group">
+          <?php if ($update == true): ?>
+            <button class="btn btn-info" type="submit" name="update">Änderung übernehmen</button>
+          <?php else: ?>
+            <button class="btn btn-info" type="submit" name="save">Speichern</button>
+          <?php endif ?>
+        </div>
+      </form>
+    </div>
+  
+
+    <!--Table/CRUD-->
+    <?php require_once 'process.php'; 
     $mysqli = new mysqli('10.35.46.56:3306', 'k132321_bot', 'karmatopISTdie187gang', 'k132321_karmatop') or die(mysqli_error($mysqli));
     $result = $mysqli->query("SELECT * FROM data ORDER BY karma+0 DESC") or die($mysqli->error);
     arsort($row['karma']);
@@ -123,9 +128,11 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         echo '</pre>';
     }
     ?>
+  </div>
 
-<!--Footer-->
-<?php include"footer.php"; ?> 
+  <!--Footer-->
+  <?php include"footer.php"; ?>
+
 </div>
 
 </body>

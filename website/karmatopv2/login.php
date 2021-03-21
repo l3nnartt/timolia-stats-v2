@@ -96,9 +96,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <title>karmatop.de | Login</title>
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://karmatop.de/">
-    <meta property="og:title" content="karmatop.de - Startseite">
+    <meta property="og:title" content="karmatop.de - Login">
     <meta property="og:description" content="Hier findest du die Website zum Timolia Statistiken Discord Bot, sowie die Karmatop Liste und weitere Informationen über den Bot und den Timolia Achievment Community Discord.">
-    <meta property="og:image" content="https://i.imgur.com/NkFEsHW.png">
+    <meta property="og:image" content="https://i.imgur.com/Pa1h7gG.png">
     <meta name="theme-color" content="#7289da">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -108,32 +108,41 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     </style>
 </head>
 <body>
+
 <!--Import Navbar-->
 <?php include"navbar.php"; ?>
-    <!--Wrapper-->
+
+    <!--Container-->
     <div class="container">
-        <div class="wrapper">
-            <h2>Login</h2>
-            <p>Bitte gib deine Anmelde-Daten ein.</p>
-            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-                <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
-                    <label>Name</label>
-                    <input type="text" name="username" class="form-control" value="<?php echo $username; ?>">
-                    <span class="help-block"><?php echo $username_err; ?></span>
-                </div>    
-                <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
-                    <label>Passwort</label>
-                    <input type="password" name="password" class="form-control">
-                    <span class="help-block"><?php echo $password_err; ?></span>
-                </div>
-                <div class="form-group">
-                    <input type="submit" class="btn btn-primary" value="Login">
-                </div>
-            </form>
+
+        <!--Wrapper-->
+        <br><br>
+        <div class="jumbotron">
+            <div class="wrapper">
+                <h2>Login</h2>
+                <p>Bitte gib deine Anmelde-Daten ein.</p>
+                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                    <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
+                        <label>Name</label>
+                        <input type="text" name="username" class="form-control" value="<?php echo $username; ?>">
+                        <span class="help-block"><?php echo $username_err; ?></span>
+                    </div>    
+                    <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
+                        <label>Passwort</label>
+                        <input type="password" name="password" class="form-control">
+                        <span class="help-block"><?php echo $password_err; ?></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-primary" value="Login">
+                    </div>
+                </form>
+            </div>
         </div>
+
     </div>
+
 <!--Footer-->
 <?php include"footer.php"; ?>
-</body>
 
+</body>
 </html>

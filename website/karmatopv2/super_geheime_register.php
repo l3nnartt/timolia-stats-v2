@@ -98,7 +98,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <head>
   <!--Head, import Bootstrap-->
     <meta charset="UTF-8">
-    <title>karmatop.de | Register</title>
+    <title>Karmatop.de | Register</title>
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://karmatop.de/">
     <meta property="og:title" content="karmatop.de - Startseite">
