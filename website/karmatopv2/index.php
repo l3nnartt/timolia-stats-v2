@@ -3,7 +3,13 @@
 <head>
   <!--Head, import Bootstrap-->
     <meta charset="UTF-8">
-    <title>Karmatop</title>
+    <title>karmatop.de | Startseite</title>
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://karmatop.de/">
+    <meta property="og:title" content="karmatop.de - Startseite">
+    <meta property="og:description" content="Hier findest du die Website zum Timolia Statistiken Discord Bot, sowie die Karmatop Liste und weitere Informationen über den Bot und den Timolia Achievment Community Discord.">
+    <meta property="og:image" content="https://i.imgur.com/NkFEsHW.png">
+    <meta name="theme-color" content="#7289da">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/darkly/bootstrap.min.css" integrity="sha384-nNK9n28pDUDDgIiIqZ/MiyO3F4/9vsMtReZK39klb/MtkZI3/LtjSjlmyVPS3KdN" crossorigin="anonymous">
@@ -13,47 +19,52 @@
 </head>
 <body>
 
+<!--Import Navbar-->
+<?php include"navbar.php"; ?>
+
 <!--Makes a Wrapper-->
 <div class="container">
 
-<!--Connect to process.php-->
-<?php require_once 'process.php'; ?>
+    <!--Connect to process.php-->
+    <?php require_once 'process.php'; ?>
 
-<!--Table/CRUD-->
-<?php require_once 'process.php'; 
-$mysqli = new mysqli('10.35.46.56:3306', 'k132321_bot', 'karmatopISTdie187gang', 'k132321_karmatop') or die(mysqli_error($mysqli));
-$result = $mysqli->query("SELECT * FROM data ORDER BY CAST karma") or die($mysqli->error);
-arsort($row['karma']);
-//pre_r($result);
-//pre_r($result->fetch_assoc());
-?>
-<div class="row justify-content-center">
-<table class="table">
-    <thead>
-    <tr>
-        <th>Spieler</th>
-        <th>Karma</th>
-    </tr>
-    </thead>
-    <?php 
-    while ($row = $result->fetch_assoc()): ?>
-    <tr>
-        <td><?php echo $row['player']; ?></td>
-        <td><?php echo $row['karma']; ?></td>
-    </tr>
-    <?php endwhile; ?>
-</table>
-</div>
-<?php
-function pre_r( $array ) {
-    echo '<pre>';
-    print_r($array);
-    echo '</pre>';
-}
-?>
-<!--Footer-->
-<p>
-<a href="https://lennartloesche.de/datenschutz.html">Datenschutz</a> - <a href="login.php">Login</a> - <a href="index.php">Startseite</a>
-<p>
+    <!--Table/CRUD-->
+    <br>
+    <br>
+    <br>
+    <?php require_once 'process.php'; 
+    $mysqli = new mysqli('10.35.46.56:3306', 'k132321_bot', 'karmatopISTdie187gang', 'k132321_karmatop') or die(mysqli_error($mysqli));
+    $result = $mysqli->query("SELECT * FROM data ORDER BY karma+0 DESC") or die($mysqli->error);
+    arsort($row['karma']);
+    ?>
+
+    <div class="row justify-content-center">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Spieler</th>
+                <th>Karma</th>
+            </tr>
+            </thead>
+            <?php 
+            while ($row = $result->fetch_assoc()): ?>
+            <tr>
+                <td><?php echo $row['player']; ?></td>
+                <td><?php echo $row['karma']; ?></td>
+            </tr>
+            <?php endwhile; ?>
+        </table>
+    </div>
+
+    <?php
+    function pre_r( $array ) {
+        echo '<pre>';
+        print_r($array);
+        echo '</pre>';
+    }
+    ?>
+
+    <!--Footer-->
+    <?php include"footer.php"; ?>
 
 </div>

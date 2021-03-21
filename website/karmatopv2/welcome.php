@@ -14,7 +14,13 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 <head>
   <!--Head, import Bootstrap-->
     <meta charset="UTF-8">
-    <title>Karmatop - Controlpanel</title>
+    <title>karmatop.de | Controlpanel</title>
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://karmatop.de/">
+    <meta property="og:title" content="karmatop.de - Startseite">
+    <meta property="og:description" content="Hier findest du die Website zum Timolia Statistiken Discord Bot, sowie die Karmatop Liste und weitere Informationen über den Bot und den Timolia Achievment Community Discord.">
+    <meta property="og:image" content="https://i.imgur.com/NkFEsHW.png">
+    <meta name="theme-color" content="#7289da">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/darkly/bootstrap.min.css" integrity="sha384-nNK9n28pDUDDgIiIqZ/MiyO3F4/9vsMtReZK39klb/MtkZI3/LtjSjlmyVPS3KdN" crossorigin="anonymous">
@@ -26,13 +32,19 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
 <!--Shows an alert after edit, delete, save-->
 <?php if (isset($_SESSION['message'])): ?>
-  <div class="alert alert-<?=$_SESSION['msg_type']?>">
-    <?php 
+<div class="alert alert-dismissible alert-<?=$_SESSION['msg_type']?>">
+  <p class="mb-0">
+  <?php 
       echo $_SESSION['message'];
       unset($_SESSION['message']);
     ?>
-  </div>
+  </p>
+</div>
 <?php endif ?>
+
+
+<!--Import Navbar-->
+<?php include"navbar.php"; ?>
 
 <!--Makes a Wrapper-->
 <div class="container">
@@ -49,45 +61,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
   <!--Connect to process.php-->
   <?php require_once 'process.php'; ?>
-
-  <!--Table/CRUD-->
-  <?php require_once 'process.php'; 
-    $mysqli = new mysqli('10.35.46.56:3306', 'k132321_bot', 'karmatopISTdie187gang', 'k132321_karmatop') or die(mysqli_error($mysqli));
-    $result = $mysqli->query("SELECT * FROM data") or die($mysqli->error);
-    //pre_r($result);
-    //pre_r($result->fetch_assoc());
-  ?>
-  <div class="row justify-content-center">
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Spieler</th>
-          <th>Karma</th>
-          <th colspan="2">Aktion</th>
-        </tr>
-      </thead>
-      <?php 
-        while ($row = $result->fetch_assoc()): ?>
-        <tr>
-          <td><?php echo $row['player']; ?></td>
-          <td><?php echo $row['karma']; ?></td>
-          <td>
-            <a href="welcome.php?edit=<?php echo $row['id']; ?>"
-                class="btn btn-info">Bearbeiten</a>
-            <a href="welcome.php?delete=<?php echo $row['id']; ?>"
-            class="btn btn-danger">Löschen</a>
-          </td>
-        </tr>
-        <?php endwhile; ?>
-    </table>
-  </div>
-  <?php
-    function pre_r( $array ) {
-      echo '<pre>';
-      print_r($array);
-      echo '</pre>';
-    }
-  ?>
 
   <!--New entry/CRUD-->
   <div class="row justify-content-center">
@@ -110,10 +83,49 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
       </div>
     </form>
   </div>
+
+  <!--Table/CRUD-->
+  <?php require_once 'process.php'; 
+    $mysqli = new mysqli('10.35.46.56:3306', 'k132321_bot', 'karmatopISTdie187gang', 'k132321_karmatop') or die(mysqli_error($mysqli));
+    $result = $mysqli->query("SELECT * FROM data ORDER BY karma+0 DESC") or die($mysqli->error);
+    arsort($row['karma']);
+    ?>
+
+    <div class="row justify-content-center">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Spieler</th>
+                <th>Karma</th>
+                <th>Control</th>
+            </tr>
+            </thead>
+            <?php 
+            while ($row = $result->fetch_assoc()): ?>
+            <tr>
+              <td><?php echo $row['player']; ?></td>
+              <td><?php echo $row['karma']; ?></td>
+              <td>
+                <a href="welcome.php?edit=<?php echo $row['id']; ?>"
+                  class="btn btn-info">Bearbeiten</a>
+                <a href="welcome.php?delete=<?php echo $row['id']; ?>"
+                  class="btn btn-danger">Löschen</a>
+              </td>
+            </tr>
+            <?php endwhile; ?>
+        </table>
+    </div>
+
+    <?php
+    function pre_r( $array ) {
+        echo '<pre>';
+        print_r($array);
+        echo '</pre>';
+    }
+    ?>
+
 <!--Footer-->
-<p>
-    <a href="https://lennartloesche.de/datenschutz.html">Datenschutz</a> - <a href="login.php">Login</a> - <a href="index.php">Startseite</a>
-<p>  
+<?php include"footer.php"; ?> 
 </div>
 
 </body>

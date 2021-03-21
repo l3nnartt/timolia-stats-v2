@@ -16,7 +16,7 @@ if (isset($_POST['save'])){
     $mysqli->query("INSERT INTO data (player, karma) VALUES('$player', '$karma')") or
             die($mysqli->error);
 
-    $_SESSION['message'] = "eintrag wurde gespeichert";
+    $_SESSION['message'] = "Der Eintrag wurde erfolgreich gespeichert!";
     $_SESSION['msg_type'] = "sucess";
 
     header('location: welcome.php');
@@ -26,7 +26,7 @@ if (isset($_GET['delete'])) {
     $id = $_GET['delete'];
     $mysqli->query("DELETE FROM data WHERE id=$id") or die($mysqli->error());
 
-    $_SESSION['message'] = "eintrag wurde gelöscht";
+    $_SESSION['message'] = "Der Eintrag wurde erfolgreich gelöscht!";
     $_SESSION['msg_type'] = "danger";
 
     header('location: welcome.php');
@@ -50,7 +50,7 @@ if (isset($_POST['update'])) {
 
     $mysqli->query("UPDATE data SET player='$player', karma='$karma' WHERE id=$id") or die($mysqli->error);
 
-    $_SESSION['message'] = "eintrag wurde bearbeitet";
+    $_SESSION['message'] = "Der Eintrag wurde erfolgreich bearbeitet!";
     $_SESSION['msg_type'] = "warning";
     
     header('location: welcome.php');
