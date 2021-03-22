@@ -1,38 +1,35 @@
 const Discord = require("discord.js");
-const fetch = require('node-fetch');
+const mysql = require('mysql');
 
 module.exports = {
 	name: 'karmatop',
 	description: 'karmatop',
 	execute(message, args, client) {
-        const url = `https://karmatop.de/api.php`;
-        fetch(url, {
-            method: 'GET',
-            headers: {
-                'Accept': 'application/json'
-            }
-        })
-            .then(res => res.json())
-            .then(data => {
-                const result = new Array();
-                for(let i in data.data.segments[0].stats) {
-                   const selectedStat = data.data.segments[0].stats[i];
-                   result.push({
-                    name: selectedStat.displayName,
-                    value: selectedStat.displayValue,
-                    inline: true
-                  });
-                }
-                console.log(result)
+		// SQL Connection
+		var con = mysql.createConnection({
+		host: "91.204.46.56",
+		user: "k132321_bot",
+		password: "karmatopISTdie187gang",
+		database: "k132321_karmatop"
+		});
 
-                const embed = new Discord.MessageEmbed()
-                    .setAuthor(`${client.user.username} • Karmatop`, client.user.displayAvatarURL(), `${url}`)
-                    .setTimestamp(message.createdAt)
+		con.connect(function(err) {
+            con.query("SELECT * FROM data ORDER BY karma+0 DESC LIMIT 10", function (err, result) {
+                const fields = new Array();
+                result.forEach(function(item, index) {
+					fields.push({
+					  name: `${index + 1}. ${item.player}`,
+					  value: item.karma
+					});
+				  });
+                var embed = new Discord.MessageEmbed()
+                    .setTitle(`${client.user.username} • Karmatop`)
                     .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
+                    .setTimestamp(message.createdAt)
                     .setColor("#4680FC")
-                    .addFields(result);
-                message.channel.send(embed);
-            })
-            .catch(e=> console.log('error fetching api: ', e));
+                    .addFields(fields );
+                message.channel.send(embed)
+            });
+        });
     }
 };
