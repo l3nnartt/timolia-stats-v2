@@ -8,6 +8,7 @@ $id = 0;
 $update = false;
 $player = "";
 $karma = "";
+$i = "1";
 
 if (isset($_POST['save'])){
     $player = $_POST['player'];

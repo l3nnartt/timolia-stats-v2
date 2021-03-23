@@ -47,6 +47,7 @@
             <table class="table">
                 <thead>
                 <tr>
+                    <th>Platz</th>
                     <th>Spieler</th>
                     <th>Karma</th>
                 </tr>
@@ -54,6 +55,7 @@
                 <?php 
                 while ($row = $result->fetch_assoc()): ?>
                 <tr>
+                    <td><?php echo $i++; ?></td>
                     <td><?php echo $row['player']; ?></td>
                     <td><?php echo $row['karma']; ?></td>
                 </tr>
