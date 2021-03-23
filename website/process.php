@@ -20,7 +20,7 @@ if (isset($_POST['save'])){
     $_SESSION['message'] = "Der Eintrag wurde erfolgreich gespeichert!";
     $_SESSION['msg_type'] = "sucess";
 
-    header('location: welcome.php');
+    header('location: control/index.php');
 }
 
 if (isset($_GET['delete'])) {
@@ -30,7 +30,7 @@ if (isset($_GET['delete'])) {
     $_SESSION['message'] = "Der Eintrag wurde erfolgreich gelöscht!";
     $_SESSION['msg_type'] = "danger";
 
-    header('location: welcome.php');
+    header('location: control/index.php');
 }
 
 if (isset($_GET['edit'])) {
@@ -54,5 +54,5 @@ if (isset($_POST['update'])) {
     $_SESSION['message'] = "Der Eintrag wurde erfolgreich bearbeitet!";
     $_SESSION['msg_type'] = "warning";
     
-    header('location: welcome.php');
+    header('location: control/index.php');
 }

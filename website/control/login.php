@@ -4,7 +4,7 @@ session_start();
  
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-  header("location: welcome.php");
+  header("location: index.php");
   exit;
 }
  
@@ -64,7 +64,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["username"] = $username;                            
                             
                             // Redirect user to welcome page
-                            header("location: welcome.php");
+                            header("location: index.php");
                         } else{
                             // Display an error message if password is not valid
                             $password_err = "Falsches Passwort";
@@ -93,24 +93,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <head>
   <!--Head, import Bootstrap-->
     <meta charset="UTF-8">
-    <title>karmatop.de | Login</title>
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://karmatop.de/">
-    <meta property="og:title" content="karmatop.de - Login">
-    <meta property="og:description" content="Hier findest du die Website zum Timolia Statistiken Discord Bot, sowie die Karmatop Liste und weitere Informationen über den Bot und den Timolia Achievment Community Discord.">
-    <meta property="og:image" content="https://i.imgur.com/Pa1h7gG.png">
-    <meta name="theme-color" content="#7289da">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/darkly/bootstrap.min.css" integrity="sha384-nNK9n28pDUDDgIiIqZ/MiyO3F4/9vsMtReZK39klb/MtkZI3/LtjSjlmyVPS3KdN" crossorigin="anonymous">
-    <style type="text/css">
-        body{ font: 14px sans-serif; text-align: center; }
-    </style>
+    <title>Karmatop.de | Login</title>
+
+    <!--Import Head-->
+    <?php include"../assets/header.php"; ?>
+
 </head>
 <body>
 
 <!--Import Navbar-->
-<?php include"navbar.php"; ?>
+<?php include"../assets/navbar.php"; ?>
 
     <!--Container-->
     <div class="container">
@@ -142,7 +134,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     </div>
 
 <!--Footer-->
-<?php include"footer.php"; ?>
+<?php include"../assets/footer.php"; ?>
 
 </body>
 </html>
