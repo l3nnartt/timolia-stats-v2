@@ -17,7 +17,8 @@ module.exports = {
 				.setTitle('Hier ist eine Liste mit allen Befehlen:')
 				.setDescription(data)
 				.setTimestamp(message.createdAt)
-            	.setFooter(`Benutze "${prefix}help [command]" um mehr zu Erfahren!`, client.user.displayAvatarURL())
+				.addField(`Für weitere Informationen benutze`, `\`\`\`${prefix}help [command]\`\`\``, true)
+            	.setFooter(`${client.user.username}`, client.user.displayAvatarURL())
             	.setColor("#4680FC");
 			return message.author.send(helpEmbed)
 			.then(() => {
@@ -46,6 +47,12 @@ module.exports = {
 
 		data.push(`**Cooldown:** ${command.cooldown || 3} Sekunde(n)`);
 
-		message.channel.send(data, { split: true });
+		const embed = new Discord.MessageEmbed()
+			.setTitle(`Hilfe für ${command.name}`)
+			.setDescription(data)
+			.setTimestamp(message.createdAt)
+			.setFooter(`${client.user.username}`, client.user.displayAvatarURL())
+			.setColor("#4680FC");
+		message.channel.send(embed)
 	},
 };

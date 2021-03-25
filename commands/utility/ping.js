@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 module.exports = {
 	name: 'ping',
-	description: 'Ping',
+	description: 'Misst die Latenz zwischen dem Command und der Antwort auf den Command',
 	cooldown: 5,
 	execute(message, args, client) {
 		const embed1 = new Discord.MessageEmbed()
