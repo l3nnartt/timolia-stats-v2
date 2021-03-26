@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const config = require("../../config.json");
 
 module.exports = {
 	name: 'info',
@@ -21,7 +22,7 @@ module.exports = {
                         { name: 'Server', value: `${totalGuilds}`, inline: true },
                         { name: 'Channel', value: `${client.channels.cache.size}`, inline: true },
                         { name: 'Benutzer', value: `${totalMembers}`, inline: true },
-                        { name: 'Version', value: `2.1`, inline: true},
+                        { name: 'Version', value: `${config.version}`, inline: true},
                         { name: 'Botinhaber', value: `<@398101340322136075>`, inline: true},
                         { name: 'Datenbeschaffung', value: 'Die gesamten Daten stammen von der offiziellen [Timolia Website](https://timolia.de/stats). Trotzdem besteht keine Garantie auf Aktualität und Richtigkeit der Daten!' },
                         { name: 'Karma Top 10', value: 'Die Karmatoplist wird manuell aktualisiert, den aktuellen Stand der Liste findet ihr unter der Toplist.' },
