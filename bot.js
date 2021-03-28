@@ -89,7 +89,7 @@ client.on('message', message => {
 			.setTitle(`${client.user.username} • Fehler`)
 			.setTimestamp(message.createdAt)
 			.setFooter(`${client.user.username}`, client.user.displayAvatarURL())
-			.setDescription(`Bitte ${timeLeft.toFixed(1)} Sekunden bevor du \`${command.name}\` wieder benutzt.`)
+			.setDescription(`Bitte warte ${timeLeft.toFixed(1)} Sekunden bevor du \`${command.name}\` wieder benutzt.`)
 			.setColor("#4680FC");
 			return message.channel.send(reply);
 		}
