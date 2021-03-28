@@ -106,7 +106,7 @@ client.on('message', message => {
 			.setTitle(`${client.user.username} • Fehler`)
 			.setTimestamp(message.createdAt)
 			.setFooter(`${client.user.username}`, client.user.displayAvatarURL())
-			.setDescription(`Es ist ein Fehler aufgetreten. Bitte wende dich an [Lennart](https://discord.com/users/398101340322136075)!`)
+			.setDescription(`Es ist ein Fehler aufgetreten. Bitte wende dich an <@398101340322136075>!`)
 			.setColor("#4680FC");
 			return message.channel.send(reply);
 	}
