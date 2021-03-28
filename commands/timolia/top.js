@@ -6,6 +6,7 @@ module.exports = {
 	name: 'top',
 	description: 'Gibt dir die Toplisten eines bestimmten Spielmodus',
     args: true,
+    cooldown: 5,
     usage: '[Spielmodus]',
 	execute(message, args, client) {
         function fetchLeaderboards(statName, limit, onData) {

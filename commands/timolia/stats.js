@@ -6,6 +6,7 @@ module.exports = {
 	name: 'stats',
 	description: 'Gibt dir die Statistiken von einem Spieler',
     args: true,
+    cooldown: 5,
     usage: '[Spielmodus] [Spieler]',
 	execute(message, args, client) {
         function getStats(url, statName, onData) {

@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 
 module.exports = {
 	name: 'server',
+  cooldown: 5,
 	description: 'Eine Liste aller Timolia Community Server',
 	execute(message, args, client) {
         var embed = new Discord.MessageEmbed()

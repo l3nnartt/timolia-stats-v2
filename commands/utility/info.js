@@ -5,6 +5,7 @@ module.exports = {
 	name: 'info',
 	description: 'Informationen über den Bot',
 	aliases: ['information'],
+    cooldown: 5,
 	execute(message, args, client) {
         const promises = [
             client.shard.fetchClientValues('guilds.cache.size'),

@@ -3,6 +3,7 @@ const Discord = require("discord.js");
 
 module.exports = {
 	name: 'status',
+  cooldown: 5,
 	description: 'Sagt dir aktuelle Informationen zum Status von Timolia',
 	execute(message, args, client) {
 	util.status(`timolia.de`, { port: 25565, enableSRV: true, timeout: 5000, protocolVersion: 47 })

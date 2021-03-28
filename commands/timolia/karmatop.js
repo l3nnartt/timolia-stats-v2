@@ -3,6 +3,7 @@ const mysql = require('mysql');
 
 module.exports = {
 	name: 'karmatop',
+	cooldown: 5,
 	description: 'karmatop',
 	execute(message, args, client) {
 		// SQL Connection

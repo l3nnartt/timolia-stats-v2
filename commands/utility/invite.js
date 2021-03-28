@@ -4,6 +4,7 @@ module.exports = {
 	name: 'invite',
 	description: 'Gibt dir einen Einladungslink um den Bot auf deinem Server hinzuzufügen.',
 	aliases: ['getbot'],
+    cooldown: 5,
 	execute(message, args, client) {
         const embed = new Discord.MessageEmbed()
             .setTitle(`${client.user.username} • Invite`)

@@ -5,6 +5,7 @@ module.exports = {
 	name: 'userinfo',
 	description: 'Gibt dir Informationen über einen Spieler',
     args: true,
+    cooldown: 5,
     usage: '[Spieler]',
 	execute(message, args, client) {
         var Spieler = (args[0]);
