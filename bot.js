@@ -29,6 +29,14 @@ for (const folder of commandFolders) {
 const cooldowns = new Discord.Collection();
 
 client.on('message', message => {
+	if (message.author.bot) return false;
+
+    if (message.content.includes("@here") || message.content.includes("@everyone")) return false;
+
+    if (message.mentions.has(client.user.id)) {
+        message.channel.send(`Mein Prefix ist \`\`${prefix}\`\``);
+    };
+
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
 
 	const args = message.content.slice(prefix.length).trim().split(/ +/);
