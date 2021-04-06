@@ -109,32 +109,39 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <!--Import Navbar-->
     <?php include"../assets/navbar.php"; ?>
 
-    <div class="wrapper">
-        <h2>register</h2>
-        <p>fülle das formular aus um einen acc zu erstellen</p>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-            <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
-                <label>Benutzer</label>
-                <input type="text" name="username" class="form-control" value="<?php echo $username; ?>">
-                <span class="help-block"><?php echo $username_err; ?></span>
-            </div>    
-            <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
-                <label>Passwort</label>
-                <input type="password" name="password" class="form-control" value="<?php echo $password; ?>">
-                <span class="help-block"><?php echo $password_err; ?></span>
-            </div>
-            <div class="form-group <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
-                <label>Bestätige Passwort</label>
-                <input type="password" name="confirm_password" class="form-control" value="<?php echo $confirm_password; ?>">
-                <span class="help-block"><?php echo $confirm_password_err; ?></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="abschicken">
-                <input type="reset" class="btn btn-default" value="Reset">
-            </div>
-            <p>du hast schon einen account? <a href="login.php">Login</a>.</p>
-        </form>
-    </div>    
+    <!--Container-->
+    <div class="container">
+
+    <!--Jumbotron-->
+    <br><br>
+    <div class="jumbotron">
+        <div class="wrapper">
+            <h2>Registrieren</h2>
+            <p>Fülle das Formular aus um dir einen Account zu erstellen</p>
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
+                    <label>Benutzername</label>
+                    <input type="text" name="username" class="form-control" value="<?php echo $username; ?>">
+                    <span class="help-block"><?php echo $username_err; ?></span>
+                </div>    
+                <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
+                    <label>Passwort</label>
+                    <input type="password" name="password" class="form-control" value="<?php echo $password; ?>">
+                    <span class="help-block"><?php echo $password_err; ?></span>
+                </div>
+                <div class="form-group <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
+                    <label>Passwort bestätigen</label>
+                    <input type="password" name="confirm_password" class="form-control" value="<?php echo $confirm_password; ?>">
+                    <span class="help-block"><?php echo $confirm_password_err; ?></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary" value="Register">
+                    <input type="reset" class="btn btn-danger" value="Reset">
+                </div>
+                <p>Du hast schon einen Account? <a href="login.php">Login</a></p>
+            </form>
+        </div>
+    </div>
 </body>
 
 <!--Footer-->

@@ -40,7 +40,7 @@
     <!--Container Timolia Achievment Community-->
     <br><br>
     <div class="jumbotron">
-        <p class="lead">Timolia Achievment Community</p>
+        <p class="lead">Timolia Achievement Community</p>
         <hr class="my-4">
         <p>Neben unseren Online Diensten gibt es auch einen Discord Server auf welchem wir uns über Achievments unterhalten. Außerdem erhaltet ihr Informationen wenn es neue Achievments gibt, oder es andere Neuigkeiten gibt. Wenn du auch auf der Karmatop Liste eingetragen werden möchtest, oder fragen zu Achievments hast kannst du gerne auf dem Server vorbeischauen</p>
         <p class="lead">

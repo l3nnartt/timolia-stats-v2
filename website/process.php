@@ -30,7 +30,7 @@ if (isset($_GET['delete'])) {
     $_SESSION['message'] = "Der Eintrag wurde erfolgreich gelöscht!";
     $_SESSION['msg_type'] = "danger";
 
-    header('location: control/index.php');
+    header('location: index.php');
 }
 
 if (isset($_GET['edit'])) {

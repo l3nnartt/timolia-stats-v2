@@ -51,7 +51,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     </div>
     <!--Buttons, Control-->
     <p>
-      <a href="reset-password.php" class="btn btn-warning">Passwort reset</a>
+      <a href="reset-password.php" class="btn btn-warning">Reset Passwort</a>
       <a href="logout.php" class="btn btn-danger">Abmelden</a>
     </p>
 
@@ -61,22 +61,37 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <!--New entry/CRUD-->
     <div class="row justify-content-center">
       <form action="../process.php" method="POST">
-        <input type="hidden" name="id" value="<?php echo $id; ?>">
-        <div class="form-group">
-          <label>Spieler</label>
-          <input type="text" name="player" class="form-control" value="<?php echo $player; ?>" placeholder="Spieler" id="inputDefault">
-        </div>
-        <div class="form-group">
-          <label>Karma</label>
-          <input type="text" name="karma" class="form-control" value="<?php echo $karma; ?>" placeholder="Karma" id="inputDefault">
-        </div>
-        <div class="form-group">
-          <?php if ($update == true): ?>
-            <button class="btn btn-info" type="submit" name="update">Änderung übernehmen</button>
-          <?php else: ?>
-            <button class="btn btn-info" type="submit" name="save">Speichern</button>
-          <?php endif ?>
-        </div>
+        <table class="table table-striped">
+          <input type="hidden" name="id" value="<?php echo $id; ?>">
+            <thead>
+            <tr>
+                <th>Spieler</th>
+                <th>Karma</th>
+                <th>Control</th>
+            </tr>
+            </thead>
+            <tr>
+              <td>
+                <div class="form-group">
+                  <input type="text" name="player" class="form-control" value="<?php echo $player; ?>" placeholder="Spieler" id="inputDefault">
+                </div>
+              </td>
+              <td>
+                <div class="form-group">
+                  <input type="text" name="karma" class="form-control" value="<?php echo $karma; ?>" placeholder="Karma" id="inputDefault">
+                </div>
+              </td>
+              <td>
+                <div class="form-group">
+                  <?php if ($update == true): ?>
+                    <button class="btn btn-info" type="submit" name="update">Änderung übernehmen</button>
+                  <?php else: ?>
+                    <button class="btn btn-info" type="submit" name="save">Speichern</button>
+                  <?php endif ?>
+                </div>
+              </td>
+            </tr>
+        </table>
       </form>
     </div>
   
