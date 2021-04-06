@@ -1,19 +1,34 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="../index.php"><img src="https://images.discordapp.net/avatars/803579214553022484/27eeeaa2e847e45bba81c8a6f474847a.png?size=32"></a>
-  <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="navbar-collapse collapse" id="navbarColor02" style="">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="../index.php">Startseite</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="../karmatop.php">Karmatop</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="../control/index.php">Controlpanel</a>
-      </li>
-    </ul>
+<!--Navigation-->
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+
+  <!--Container Fluid-->
+  <div class="container-fluid">
+
+    <!--Brand-->
+    <a class="navbar-brand" href="../index.php"><img src="https://images.discordapp.net/avatars/803579214553022484/27eeeaa2e847e45bba81c8a6f474847a.png?size=32"></a>
+
+    <!--Responsive Button-->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!--Navigation Items-->
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="../index.php">Startseite</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../karmatop.php">Karmatop</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../control/index.php">Controlpanel</a>
+        </li>
+      </ul>
+    </div>
+
   </div>
+
 </nav>
+
+<br><br>

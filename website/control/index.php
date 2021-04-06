@@ -13,7 +13,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 <html lang="en">
 <head>
   <!--Head, import Bootstrap-->
-    <meta charset="UTF-8">
     <title>Karmatop.de | Controlpanel</title>
 
     <!--Import Head-->

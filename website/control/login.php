@@ -108,7 +108,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <div class="container">
 
         <!--Wrapper-->
-        <br><br>
         <div class="jumbotron">
             <div class="wrapper">
                 <h2>Login</h2>
@@ -133,8 +132,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     </div>
 
-<!--Footer-->
-<?php include"../assets/footer.php"; ?>
+    <!--Footer-->
+    <?php include"../assets/footer.php"; ?>
 
 </body>
 </html>

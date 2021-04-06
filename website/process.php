@@ -18,7 +18,7 @@ if (isset($_POST['save'])){
             die($mysqli->error);
 
     $_SESSION['message'] = "Der Eintrag wurde erfolgreich gespeichert!";
-    $_SESSION['msg_type'] = "sucess";
+    $_SESSION['msg_type'] = "success";
 
     header('location: control/index.php');
 }
