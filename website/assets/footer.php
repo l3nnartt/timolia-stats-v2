@@ -1,6 +1,3 @@
-<br>
-<br>
-
 <p>
     karmatop.de ist eine Community Website und steht nicht in Verbindung mit der tixia UG (haftungsbeschränkt) oder dem Timolia Netzwerk.<br>
     Wir bemühen uns die Liste so aktuell wie möglich zu halten, trotzdem besteht keine Garantie auf Aktualität und Richtigkeit der Daten!

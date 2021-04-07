@@ -1,5 +1,5 @@
 <!--Navigation-->
-<nav class="navbar navbar-expand-md navbar-light bg-light">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3">
 
   <!--Container Fluid-->
   <div class="container-fluid">
@@ -30,5 +30,3 @@
   </div>
 
 </nav>
-
-<br><br>

@@ -71,44 +71,60 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 ?>
  
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <!--Head, import Bootstrap-->
-    <meta charset="UTF-8">
-    <title>Karmatop.de | Reset Password</title>
+<html lang="de">
+    <head>
+        <!--Head, import Bootstrap-->
+        <title>Karmatop.de | Password-Reset</title>
 
-    <!--Import Head-->
-    <?php include"../assets/header.php"; ?>
+        <!--Import Head-->
+        <?php include"../assets/header.php"; ?>
+    </head>
+    <body>
+        <!--Import Navbar-->
+        <?php include"../assets/navbar.php"; ?>
 
-</head>
-<body>
-
-    <!--Import Navbar-->
-    <?php include"../assets/navbar.php"; ?>
-    
-    <div class="wrapper">
-        <h2>Reset Passwort</h2>
-        <p>bitte ausfüllen um das pw zu resetten.</p>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post"> 
-            <div class="form-group <?php echo (!empty($new_password_err)) ? 'has-error' : ''; ?>">
-                <label>neues Passwort</label>
-                <input type="password" name="new_password" class="form-control" value="<?php echo $new_password; ?>">
-                <span class="help-block"><?php echo $new_password_err; ?></span>
+        <!--Container-->
+        <div class="container">
+        
+            <!--Wrapper-->
+            <div class="jumbotron mb-3">
+                <div class="wrapper">
+                    <h2>Passwort Reset</h2>
+                    <p>Bitte fülle das folgende Formular aus um dein Passwort zu bearbeiten/resetten</p>
+                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post"> 
+                        <div class="form-group mb-3 <?php echo (!empty($new_password_err)) ? 'has-error' : ''; ?>">
+                            <label>Neues Passwort</label>
+                            <input type="password" name="new_password" class="form-control" value="<?php echo $new_password; ?>">
+                            <span class="help-block"><?php echo $new_password_err; ?></span>
+                        </div>
+                        <div class="form-group mb-3 <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
+                            <label>Passwort wiederholen</label>
+                            <input type="password" name="confirm_password" class="form-control">
+                            <span class="help-block"><?php echo $confirm_password_err; ?></span>
+                        </div>
+                        <div class="form-group mb-3">
+                            <input type="submit" class="btn btn-primary" value="Submit">
+                            <a class="btn btn-warning" href="index.php">Zurück</a>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div class="form-group <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
-                <label>bestätige passwort</label>
-                <input type="password" name="confirm_password" class="form-control">
-                <span class="help-block"><?php echo $confirm_password_err; ?></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Submit">
-                <a class="btn btn-link" href="index.php">Abbrechen</a>
-            </div>
-        </form>
-    </div>    
-</body>
 
-<!--Footer-->
-<?php include"../assets/footer.php"; ?>
+        </div>
+
+        <!--Scripts-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+        <!--Old for Burger Menu-->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    </body>
+
+    <footer>
+        <!--Footer-->
+        <?php include"../assets/footer.php"; ?>
+    </footer>
 
 </html>

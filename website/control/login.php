@@ -89,51 +89,59 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 ?>
  
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <!--Head, import Bootstrap-->
-    <meta charset="UTF-8">
-    <title>Karmatop.de | Login</title>
+<html lang="de">
+    <head>
+    <!--Head, import Bootstrap-->
+        <title>Karmatop.de | Login</title>
 
-    <!--Import Head-->
-    <?php include"../assets/header.php"; ?>
+        <!--Import Head-->
+        <?php include"../assets/header.php"; ?>
+    </head>
 
-</head>
-<body>
+    <body>
+        <!--Import Navbar-->
+        <?php include"../assets/navbar.php"; ?>
 
-<!--Import Navbar-->
-<?php include"../assets/navbar.php"; ?>
+        <!--Container-->
+        <div class="container">
 
-    <!--Container-->
-    <div class="container">
-
-        <!--Wrapper-->
-        <div class="jumbotron">
-            <div class="wrapper">
-                <h2>Login</h2>
-                <p>Bitte gib deine Anmelde-Daten ein.</p>
-                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-                    <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
-                        <label>Name</label>
-                        <input type="text" name="username" class="form-control" value="<?php echo $username; ?>">
-                        <span class="help-block"><?php echo $username_err; ?></span>
-                    </div>    
-                    <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
-                        <label>Passwort</label>
-                        <input type="password" name="password" class="form-control">
-                        <span class="help-block"><?php echo $password_err; ?></span>
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" class="btn btn-primary" value="Login">
-                    </div>
-                </form>
+            <!--Jumbotron-->
+            <div class="jumbotron">
+                <div class="wrapper">
+                    <h2>Anmeldung</h2>
+                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                        <div class="form-group mb-3 <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
+                            <label>Name</label>
+                            <input type="text" name="username" class="form-control" value="<?php echo $username; ?>">
+                            <span class="help-block"><?php echo $username_err; ?></span>
+                        </div>    
+                        <div class="form-group mb-3 <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
+                            <label>Passwort</label>
+                            <input type="password" name="password" class="form-control">
+                            <span class="help-block"><?php echo $password_err; ?></span>
+                        </div>
+                        <div class="form-group mb-3">
+                            <input type="submit" class="btn btn-primary" value="Login">
+                        </div>
+                    </form>
+                </div>
             </div>
+
         </div>
 
-    </div>
+        <!--Scripts-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 
-    <!--Footer-->
-    <?php include"../assets/footer.php"; ?>
+        <!--Old for Burger Menu-->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-</body>
+    </body>
+
+    <footer>
+        <!--Footer-->
+        <?php include"../assets/footer.php"; ?>
+    </footer>
+
 </html>
