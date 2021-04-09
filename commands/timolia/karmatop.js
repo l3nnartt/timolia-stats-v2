@@ -6,6 +6,7 @@ module.exports = {
 	cooldown: 5,
 	description: 'karmatop',
 	execute(message, args, client) {
+		
 		// SQL Connection
 		var con = mysql.createConnection({
 		host: "91.204.46.56",

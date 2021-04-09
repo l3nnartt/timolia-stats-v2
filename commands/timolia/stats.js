@@ -35,11 +35,11 @@ module.exports = {
             }).catch(function (err) {
                 console.warn('Fehler bei der Suche nach Statistiken:', err);
                 var embed = new Discord.MessageEmbed()
-                .setTitle(`${client.user.username} • Fehler`)
-                .setDescription('Es konnten keine Statistiken für diesen Spieler im ausgewählten Spielmodus gefunden werden.')
-                .setTimestamp(message.createdAt)
-                .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
-                .setColor("#4680FC");
+                    .setTitle(`${client.user.username} • Fehler`)
+                    .setDescription('Es konnten keine Statistiken für diesen Spieler im ausgewählten Spielmodus gefunden werden.')
+                    .setTimestamp(message.createdAt)
+                    .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
+                    .setColor("#4680FC");
                 message.channel.send(embed);
             });
         }
