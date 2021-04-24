@@ -12,14 +12,16 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 <!DOCTYPE html>
 <html lang="de">
   <head>
-    <!--Head, import Bootstrap-->
+    <!--Head/Title-->
     <title>Karmatop.de | Controlpanel</title>
 
     <!--Import Head-->
     <?php include"../assets/header.php"; ?>
   </head>
 
+  <!--Body-->
   <body>
+  
     <!--Shows an alert after edit, delete, save-->
     <?php if (isset($_SESSION['message'])): ?>
       <div class="alert alert-dismissible alert-<?=$_SESSION['msg_type']?>">

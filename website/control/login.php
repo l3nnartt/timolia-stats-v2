@@ -105,27 +105,29 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <!--Container-->
         <div class="container">
 
-            <!--Jumbotron-->
-            <div class="jumbotron">
-                <div class="wrapper">
-                    <h2>Anmeldung</h2>
+                <!--Login Card-->
+                <div class="card">
                     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-                        <div class="form-group mb-3 <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
-                            <label>Name</label>
-                            <input type="text" name="username" class="form-control" value="<?php echo $username; ?>">
-                            <span class="help-block"><?php echo $username_err; ?></span>
-                        </div>    
-                        <div class="form-group mb-3 <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
-                            <label>Passwort</label>
-                            <input type="password" name="password" class="form-control">
-                            <span class="help-block"><?php echo $password_err; ?></span>
+                        <div class="card-body">
+                            <h4 class="card-title">Anmeldung</h4>
+                            <div class="form-group mb-3 <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
+                                <label>Name</label>
+                                <input type="text" name="username" class="form-control" value="<?php echo $username; ?>">
+                                <span class="help-block"><?php echo $username_err; ?></span>
+                            </div>    
+                            <div class="form-group mb-3 <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
+                                <label>Passwort</label>
+                                <input type="password" name="password" class="form-control">
+                                <span class="help-block"><?php echo $password_err; ?></span>
+                            </div>
                         </div>
-                        <div class="form-group mb-3">
-                            <input type="submit" class="btn btn-primary" value="Login">
+                        <div class="card-footer">
+                            <div class="form-group mb-3">
+                                <input type="submit" class="btn btn-outline-primary w-100" value="Login">
+                            </div>
                         </div>
                     </form>
                 </div>
-            </div>
 
         </div>
 

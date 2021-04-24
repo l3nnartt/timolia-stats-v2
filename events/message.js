@@ -5,6 +5,7 @@ module.exports = {
 	name: 'message',
 	execute(message, client) {
 		if (message.channel.type == 'dm') {
+			
 			//TimeStamp
 			const timestamp = new Date()
 

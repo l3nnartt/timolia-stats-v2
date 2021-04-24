@@ -15,9 +15,6 @@
         <?php include"assets/navbar.php"; ?>
 
         <!--Cards-->
-        <h1>karmatop.de</h1>
-
-        <!--Cards-->
         <div class="container padding">
             <div class="row padding">
 
