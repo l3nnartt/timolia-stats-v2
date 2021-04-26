@@ -60,14 +60,15 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         <!--New entry/CRUD-->
         <div class="row justify-content-center">
           <form action="../process.php" method="POST">
-            <table class="table table-striped">
+            <table class="table">
               <input type="hidden" name="id" value="<?php echo $id; ?>">
                 <thead>
-                <tr>
-                    <th>Spieler</th>
-                    <th>Karma</th>
-                    <th>Control</th>
-                </tr>
+                  <tr>
+                      <th>Spieler</th>
+                      <th>Karma</th>
+                      <th>UUID</th>
+                      <th>Control</th>
+                  </tr>
                 </thead>
                 <tr>
                   <td>
@@ -78,6 +79,11 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                   <td>
                     <div class="form-group">
                       <input type="text" name="karma" class="form-control" value="<?php echo $karma; ?>" placeholder="Karma" id="inputDefault">
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-group">
+                      <input type="text" name="uuid" class="form-control" value="<?php echo $uuid; ?>" placeholder="UUID" id="inputDefault">
                     </div>
                   </td>
                   <td>
@@ -103,22 +109,24 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         <div class="row justify-content-center">
             <table class="table table-striped">
                 <thead>
-                <tr>
-                    <th>Spieler</th>
-                    <th>Karma</th>
-                    <th>Control</th>
-                </tr>
+                  <tr>
+                      <th>Spieler</th>
+                      <th>Karma</th>
+                      <th>UUID</th>
+                      <th>Control</th>
+                  </tr>
                 </thead>
                 <?php 
                 while ($row = $result->fetch_assoc()): ?>
                 <tr>
                   <td><?php echo $row['player']; ?></td>
                   <td><?php echo $row['karma']; ?></td>
+                  <td><?php echo $row['uuid']; ?></td>
                   <td>
                     <a href="index.php?edit=<?php echo $row['id']; ?>"
-                      class="btn btn-info">Bearbeiten</a>
+                      class="btn btn-info"><i class="fas fa-edit"></i></a>
                     <a href="index.php?delete=<?php echo $row['id']; ?>"
-                      class="btn btn-danger">Löschen</a>
+                      class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
                   </td>
                 </tr>
                 <?php endwhile; ?>

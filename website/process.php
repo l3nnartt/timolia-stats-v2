@@ -41,6 +41,7 @@ if (isset($_GET['edit'])) {
         $row = $result->fetch_array();
         $player = $row['player'];
         $karma = $row['karma'];
+        $uuid = $row['uuid'];
     }
 }
 
@@ -48,8 +49,9 @@ if (isset($_POST['update'])) {
     $id = $_POST['id'];
     $player = $_POST['player'];
     $karma = $_POST['karma'];
+    $uuid = $_POST['uuid'];
 
-    $mysqli->query("UPDATE data SET player='$player', karma='$karma' WHERE id=$id") or die($mysqli->error);
+    $mysqli->query("UPDATE data SET player='$player', karma='$karma', uuid='$uuid' WHERE id=$id") or die($mysqli->error);
 
     $_SESSION['message'] = "Der Eintrag wurde erfolgreich bearbeitet!";
     $_SESSION['msg_type'] = "warning";

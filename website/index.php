@@ -19,40 +19,53 @@
             <div class="row padding">
 
                 <!--Card 1-->
-                <div class="col-sm-4 mb-3">
+                <div class="col-sm-6 mb-3">
                     <div class="card h-100">
                         <div class="card-body">
-                            <h4 class="card-title">Timolia Statistiken</h4>
-                            <p>Auf dieser Website findest du die Karmatop Liste, welche alle Spieler die auf dem Timolia Achievment Community beinhaltet, und deren Karma auflistet. Wenn du mehr erfahren möchtest oder eine Frage hast, dann komm doch einfach auf den Timolia Achievment Community Discord</p>
+                            <h4 class="card-title">Website</h4>
+                            <p>Auf dieser Website findest du die Karmatop Liste, welche alle Spieler die auf dem Timolia Achievement Community beinhaltet, und deren Karma auflistet. Wenn du mehr erfahren möchtest oder eine Frage hast, dann komm doch einfach auf den Timolia Achievment Community Discord</p>
                         </div>
                         <div class="card-footer">
-                            <a href="karmatop.php" class="btn btn-outline-primary w-100">Zur Karmatop</a>
+                            <a href="karmatop.php" class="btn btn-primary w-100">Zur Karmatop</a>
                         </div>
                     </div>
                 </div>
 
                 <!--Card 2-->
-                <div class="col-sm-4 mb-3">
+                <div class="col-sm-6 mb-3">
                     <div class="card h-100">
                         <div class="card-body">
-                            <h4 class="card-title">Timolia Achievement Community</h4>
-                            <p>Neben unseren Online Diensten gibt es auch einen Discord Server auf welchem wir uns über Achievments unterhalten. Außerdem erhaltet ihr Informationen wenn es neue Achievments gibt, oder es andere Neuigkeiten gibt. Wenn du auch auf der Karmatop Liste eingetragen werden möchtest, oder fragen zu Achievments hast kannst du gerne auf dem Server vorbeischauen</p>
+                            <h4 class="card-title">Discord-Bot</h4>
+                            <p>Einer unserer Dienste ist ein Discord Bot welcher euch ermöglicht eure Statistiken von Timolia abzufragen, außerdem bietet dieser einen Karmatop und einen Userinfo Command um immer die Karmapunkte einzelner Spieler nachschauen zu können.</p>
                         </div>
                         <div class="card-footer">
-                            <a href="https://discord.com/api/oauth2/authorize?client_id=803579214553022484&permissions=8&scope=bot" class="btn btn-outline-primary w-100">Zum Discordbot</a>
+                            <a href="https://discord.com/api/oauth2/authorize?client_id=803579214553022484&permissions=8&scope=bot" class="btn btn-primary w-100">Zum Discord-Bot</a>
                         </div>
                     </div>
                 </div>
 
                 <!--Card 3-->
-                <div class="col-sm-4 mb-3">
+                <div class="col-sm-6 mb-3">
                     <div class="card h-100">
                         <div class="card-body">
-                            <h4 class="card-title">Karmatop</h4>
-                            <p>Auf dieser Website findest du die Karmatop Liste, welche alle Spieler die auf dem Timolia Achievment Community beinhaltet, und deren Karma auflistet. Wenn du mehr erfahren möchtest oder eine Frage hast, dann komm doch einfach auf den Timolia Achievment Community Discord</p>
+                            <h4 class="card-title">Discord-Server</h4>
+                            <p>Um Stets auf dem neusten Stand zu sein ist es sinnvoll auf dem Achievement Discord zu joinen, dort werden immer die neusten Infos bekannt gegeben.</p>
                         </div>
                         <div class="card-footer">
-                            <a href="https://discord.gg/t9Jny6ds3E" class="btn btn-outline-primary w-100">Discord Server beitreten</a>
+                            <a href="https://discord.gg/t9Jny6ds3E" class="btn btn-primary w-100">Discord-Server beitreten</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Card 4-->
+                <div class="col-sm-6 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h4 class="card-title">Labymod Addon</h4>
+                            <p>Dieses Addon aktualisiert automatisch deine aktuellen Karmapunkte mit der Website wenn du auf Timolia joinst. Außerdem gibt es weitere Features wie Stats in Pixelspace und eine AutoGG Funktionen für jeden Modus.</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="https://github.com/l3nnartt/timolia-addon-1.8/releases" class="btn btn-primary w-100">Download auf GitHub</a>
                         </div>
                     </div>
                 </div>

@@ -123,7 +123,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         </div>
                         <div class="card-footer">
                             <div class="form-group mb-3">
-                                <input type="submit" class="btn btn-outline-primary w-100" value="Login">
+                                <input type="submit" class="btn btn-primary w-100" value="Login">
                             </div>
                         </div>
                     </form>

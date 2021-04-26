@@ -38,3 +38,8 @@ if(!empty($_GET["name"]) && !empty($_GET["karma"]) && !empty($_GET["uuid"]) && s
         http_response_code(404);
     }
 ?>
+
+<!doctype html>
+<html>
+    <h3> Status: OK </h3>
+</html>
