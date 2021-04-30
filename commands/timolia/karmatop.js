@@ -6,7 +6,7 @@ module.exports = {
 	cooldown: 5,
 	description: 'karmatop',
 	execute(message, args, client) {
-		
+
 		// SQL Connection
 		var con = mysql.createConnection({
 		host: "91.204.46.56",
@@ -29,7 +29,7 @@ module.exports = {
                     .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
                     .setTimestamp(message.createdAt)
                     .setColor("#4680FC")
-                    .addFields(fields );
+                    .addFields(fields);
                 message.channel.send(embed)
             });
         });
