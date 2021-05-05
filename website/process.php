@@ -13,8 +13,9 @@ $i = "1";
 if (isset($_POST['save'])){
     $player = $_POST['player'];
     $karma = $_POST['karma'];
+    $uuid = $_POST['uuid'];
 
-    $mysqli->query("INSERT INTO data (player, karma) VALUES('$player', '$karma')") or
+    $mysqli->query("INSERT INTO data (player, karma, uuid) VALUES('$player', '$karma', '$uuid')") or
             die($mysqli->error);
 
     $_SESSION['message'] = "Der Eintrag wurde erfolgreich gespeichert!";
