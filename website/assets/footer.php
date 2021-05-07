@@ -4,5 +4,5 @@
     Wir bemühen uns die Liste so aktuell wie möglich zu halten, trotzdem besteht keine Garantie auf Aktualität und Richtigkeit der Daten!
 <p>
 <p>
-    <a href="https://lennartloesche.de/datenschutz.html">Datenschutz</a> - <a href="https://lennartloesche.de/impressum.html">Impressum</a> - <a href="https://status.karmatop.de/">Status</a>
+    <a href="https://lennartloesche.de/datenschutz.html">Datenschutz</a> - <a href="https://lennartloesche.de/impressum.html">Impressum</a> - <a href="https://stats.uptimerobot.com/Y0D4AI30Mx">Status</a>
 <p>
