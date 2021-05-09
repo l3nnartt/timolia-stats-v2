@@ -41,12 +41,21 @@ module.exports = {
 				`mit ${response.onlinePlayers} Spielern | +help`
 			];
 			let activity = activities[Math.floor(Math.random() * activities.length)];
-			client.user.setActivity(
-				activity,
+			client.user.setActivity(activity,
 					{
 		  				type: "PLAYING"
 					}
 				);
+			}).catch(function (err) {
+				const activities = [
+					`mit 0 Spielern | +help`
+				];
+				let activity = activities[Math.floor(Math.random() * activities.length)];
+				client.user.setActivity( activity,
+						{
+							  type: "PLAYING"
+						}
+					);
 			});
   		},15000);
 	},

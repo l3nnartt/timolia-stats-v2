@@ -6,6 +6,7 @@ module.exports = {
 	name: 'userinfo',
 	description: 'Gibt dir Informationen über einen Spieler',
     args: true,
+    aliases: ['karma'],
     cooldown: 5,
     usage: '[Spieler]',
 	execute(message, args, client) {

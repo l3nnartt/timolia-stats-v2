@@ -32,15 +32,26 @@ module.exports = {
                     }
                 });
                 onData(data);
+                var errorembed = new Discord.MessageEmbed()
+                .setTitle(`${client.user.username} • Fehler`)
+                .setDescription('Es konnten keine Statistiken für diesen Spieler im ausgewählten Spielmodus gefunden werden.')
+                .setTimestamp(message.createdAt)
+                .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
+                .setColor("#4680FC");
+
+                if(data === null) {
+                    message.channel.send(errorembed)
+                }
+
             }).catch(function (err) {
                 console.warn('Fehler bei der Suche nach Statistiken:', err);
-                var embed = new Discord.MessageEmbed()
-                    .setTitle(`${client.user.username} • Fehler`)
-                    .setDescription('Es konnten keine Statistiken für diesen Spieler im ausgewählten Spielmodus gefunden werden.')
-                    .setTimestamp(message.createdAt)
-                    .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
-                    .setColor("#4680FC");
-                message.channel.send(embed);
+                var errorembed = new Discord.MessageEmbed()
+                .setTitle(`${client.user.username} • Fehler`)
+                .setDescription('Es konnten keine Statistiken für diesen Spieler im ausgewählten Spielmodus gefunden werden.')
+                .setTimestamp(message.createdAt)
+                .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
+                .setColor("#4680FC");
+                message.channel.send(errorembed);
             });
         }
         let Gamemode = (args[0]).toLowerCase();
@@ -64,7 +75,8 @@ module.exports = {
                     }
                 );
             })
-            message.channel.send(embed)
+            if (!result.firstLogin) return message.channel.send(notfound)
+            return message.channel.send(embed)
         });
     }
 };
