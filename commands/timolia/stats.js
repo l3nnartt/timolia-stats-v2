@@ -32,22 +32,11 @@ module.exports = {
                     }
                 });
                 onData(data);
-                var errorembed = new Discord.MessageEmbed()
-                .setTitle(`${client.user.username} • Fehler`)
-                .setDescription('Es konnten keine Statistiken für diesen Spieler im ausgewählten Spielmodus gefunden werden.')
-                .setTimestamp(message.createdAt)
-                .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
-                .setColor("#4680FC");
-
-                if(data === null) {
-                    message.channel.send(errorembed)
-                }
-
             }).catch(function (err) {
                 console.warn('Fehler bei der Suche nach Statistiken:', err);
                 var errorembed = new Discord.MessageEmbed()
                 .setTitle(`${client.user.username} • Fehler`)
-                .setDescription('Es konnten keine Statistiken für diesen Spieler im ausgewählten Spielmodus gefunden werden.')
+                .setDescription(`Es konnten keine Statistiken für **${Spieler}** in **${Gamemode}** gefunden werden.`)
                 .setTimestamp(message.createdAt)
                 .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
                 .setColor("#4680FC");
@@ -58,6 +47,17 @@ module.exports = {
         let Spieler = (args[1]);
         let Spielerkopf = "https://cravatar.eu/helmavatar/" + Spieler + "/60.png"
         const url = "https://timolia.de/stats/" + Spieler;
+
+        var errorembed = new Discord.MessageEmbed()
+        .setTitle(`${client.user.username} • Fehler`)
+        .setDescription('Fehlendes Argument, korrekte Benutzung ``!stats [Spielmodus] [Spieler]``')
+        .setTimestamp(message.createdAt)
+        .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
+        .setColor("#4680FC");
+
+        if(!Gamemode) return message.channel.send(errorembed);
+        if(!Spieler) return message.channel.send(errorembed);
+
         getStats(url, `${Gamemode}`, data => {
             const embed = new Discord.MessageEmbed()
                 .setTitle(`${Gamemode} • ${Spieler}`)
@@ -75,7 +75,6 @@ module.exports = {
                     }
                 );
             })
-            if (!result.firstLogin) return message.channel.send(notfound)
             return message.channel.send(embed)
         });
     }

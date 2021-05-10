@@ -56,7 +56,7 @@ module.exports = {
 							  type: "PLAYING"
 						}
 					);
-			});
+				});
   		},15000);
 	},
 };
