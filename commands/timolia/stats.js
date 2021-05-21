@@ -60,12 +60,12 @@ module.exports = {
 
         getStats(url, `${Gamemode}`, data => {
             const embed = new Discord.MessageEmbed()
-                .setTitle(`${Gamemode} • ${Spieler}`)
-                .setURL(`${url}`)
-                .setThumbnail(`${Spielerkopf}`)
-                .setTimestamp(message.createdAt)
-                .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
-                .setColor("#4680FC");
+            .setTitle(`${Gamemode} • ${Spieler}`)
+            .setURL(`${url}`)
+            .setThumbnail(`${Spielerkopf}`)
+            .setTimestamp(message.createdAt)
+            .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
+            .setColor("#4680FC");
             data.forEach(d => {
                 embed.addFields(
                     {
@@ -75,7 +75,15 @@ module.exports = {
                     }
                 );
             })
-            return message.channel.send(embed)
+
+            const fehler = new Discord.MessageEmbed()
+            .setTitle(`${client.user.username} • Fehler`)
+            .setDescription(`Es konnten keine Statistiken für **${Spieler}** in **${Gamemode}** gefunden werden.`)
+            .setTimestamp(message.createdAt)
+            .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
+            .setColor("#4680FC");
+            if(data.length === 0) message.channel.send(fehler)
+            else return message.channel.send(embed);
         });
     }
 };
