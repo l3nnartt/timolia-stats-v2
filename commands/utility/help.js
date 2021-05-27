@@ -14,12 +14,12 @@ module.exports = {
 		if (!args.length) {
 			const description = data.push(commands.map(command => command.name).join('\n'));
 			const helpEmbed = new Discord.MessageEmbed()
-				.setTitle('Hier ist eine Liste mit allen Befehlen:')
-				.setDescription(data)
-				.setTimestamp(message.createdAt)
-				.addField(`Für weitere Informationen benutze`, `\`\`\`${prefix}help [command]\`\`\``, true)
-            	.setFooter(`${client.user.username}`, client.user.displayAvatarURL())
-            	.setColor("#4680FC");
+			.setTitle('Hier ist eine Liste mit allen Befehlen:')
+			.setDescription(data)
+			.setTimestamp(message.createdAt)
+			.addField(`Für weitere Informationen benutze`, `\`\`\`${prefix}help [command]\`\`\``, true)
+			.setFooter(`${client.user.username}`, client.user.displayAvatarURL())
+			.setColor("#4680FC");
 			return message.author.send(helpEmbed)
 			.then(() => {
 				if (message.channel.type === 'dm') return;
@@ -48,11 +48,11 @@ module.exports = {
 		data.push(`**Cooldown:** ${command.cooldown || 3} Sekunde(n)`);
 
 		const embed = new Discord.MessageEmbed()
-			.setTitle(`Hilfe für ${command.name}`)
-			.setDescription(data)
-			.setTimestamp(message.createdAt)
-			.setFooter(`${client.user.username}`, client.user.displayAvatarURL())
-			.setColor("#4680FC");
-		message.channel.send(embed)
+		.setTitle(`Hilfe für ${command.name}`)
+		.setDescription(data)
+		.setTimestamp(message.createdAt)
+		.setFooter(`${client.user.username}`, client.user.displayAvatarURL())
+		.setColor("#4680FC");
+		message.channel.send(embed);
 	},
 };

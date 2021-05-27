@@ -15,7 +15,6 @@ for (const file of eventFiles) {
 }
 
 client.commands = new Discord.Collection();
-
 const commandFolders = fs.readdirSync('./commands');
 
 for (const folder of commandFolders) {
@@ -49,34 +48,34 @@ client.on('message', message => {
 
 	if (command.guildOnly && message.channel.type === 'dm') {
 		const reply = new Discord.MessageEmbed()
-				.setTitle(`${client.user.username} • Fehler`)
-				.setTimestamp(message.createdAt)
-				.setFooter(`${client.user.username}`, client.user.displayAvatarURL())
-				.setDescription(`Dieser Befehl funktioniert nur auf Servern!`)
-				.setColor("#4680FC");
-			return message.channel.send(reply);
+		.setTitle(`${client.user.username} • Fehler`)
+		.setTimestamp(message.createdAt)
+		.setFooter(`${client.user.username}`, client.user.displayAvatarURL())
+		.setDescription(`Dieser Befehl funktioniert nur auf Servern!`)
+		.setColor("#4680FC");
+		return message.channel.send(reply);
 	}
 
 	if (command.permissions) {
 		const authorPerms = message.channel.permissionsFor(message.author);
 		if (!authorPerms || !authorPerms.has(command.permissions)) {
 			const reply = new Discord.MessageEmbed()
-				.setTitle(`${client.user.username} • Fehler`)
-				.setTimestamp(message.createdAt)
-				.setFooter(`${client.user.username}`, client.user.displayAvatarURL())
-				.setDescription(`Du hast nicht die nötigen Rechte für diesen Befehl!`)
-				.setColor("#4680FC");
+			.setTitle(`${client.user.username} • Fehler`)
+			.setTimestamp(message.createdAt)
+			.setFooter(`${client.user.username}`, client.user.displayAvatarURL())
+			.setDescription(`Du hast nicht die nötigen Rechte für diesen Befehl!`)
+			.setColor("#4680FC");
 			return message.channel.send(reply);
 		}
 	}
 
 	if (command.args && !args.length) {
 		const reply = new Discord.MessageEmbed()
-			.setTitle(`${client.user.username} • Fehler`)
-			.setTimestamp(message.createdAt)
-			.setFooter(`${client.user.username}`, client.user.displayAvatarURL())
-			.setDescription(`Fehlendes Argument, korrekte Benutzung \`${prefix}${command.name} ${command.usage}\``)
-			.setColor("#4680FC");
+		.setTitle(`${client.user.username} • Fehler`)
+		.setTimestamp(message.createdAt)
+		.setFooter(`${client.user.username}`, client.user.displayAvatarURL())
+		.setDescription(`Fehlendes Argument, korrekte Benutzung \`${prefix}${command.name} ${command.usage}\``)
+		.setColor("#4680FC");
 		return message.channel.send(reply);
 	}
 	
@@ -94,11 +93,11 @@ client.on('message', message => {
 		if (now < expirationTime) {
 			const timeLeft = (expirationTime - now) / 1000;
 			const reply = new Discord.MessageEmbed()
-				.setTitle(`${client.user.username} • Fehler`)
-				.setTimestamp(message.createdAt)
-				.setFooter(`${client.user.username}`, client.user.displayAvatarURL())
-				.setDescription(`Bitte warte ${timeLeft.toFixed(1)} Sekunden bevor du \`${command.name}\` wieder benutzt.`)
-				.setColor("#4680FC");
+			.setTitle(`${client.user.username} • Fehler`)
+			.setTimestamp(message.createdAt)
+			.setFooter(`${client.user.username}`, client.user.displayAvatarURL())
+			.setDescription(`Bitte warte ${timeLeft.toFixed(1)} Sekunden bevor du \`${command.name}\` wieder benutzt.`)
+			.setColor("#4680FC");
 			return message.channel.send(reply);
 		}
 	}
@@ -111,11 +110,11 @@ client.on('message', message => {
 	} catch (error) {
 		console.error(error);
 		const reply = new Discord.MessageEmbed()
-			.setTitle(`${client.user.username} • Fehler`)
-			.setTimestamp(message.createdAt)
-			.setFooter(`${client.user.username}`, client.user.displayAvatarURL())
-			.setDescription(`Es ist ein Fehler aufgetreten. Bitte wende dich an <@398101340322136075>!`)
-			.setColor("#4680FC");
+		.setTitle(`${client.user.username} • Fehler`)
+		.setTimestamp(message.createdAt)
+		.setFooter(`${client.user.username}`, client.user.displayAvatarURL())
+		.setDescription(`Es ist ein Fehler aufgetreten. Bitte wende dich an <@398101340322136075>!`)
+		.setColor("#4680FC");
 		return message.channel.send(reply);
 	}
 });

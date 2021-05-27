@@ -3,10 +3,10 @@ const { ShardingManager } = require('discord.js');
 const manager = new ShardingManager('./bot.js', { token: `${token}` });
 
 //top.gg - autopost stats
-const AutoPoster = require('topgg-autoposter')
-const ap = AutoPoster(`${autoposter}`, manager)
+const AutoPoster = require('topgg-autoposter');
+const ap = AutoPoster(`${autoposter}`, manager);
 ap.on('posted', () => {
-  console.log('Posted stats to Top.gg!')
+  console.log('Posted stats to Top.gg!');
 })
 
 manager.on('message', (shard, message) => {

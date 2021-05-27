@@ -11,8 +11,8 @@ module.exports = {
     usage: '[Spieler]',
 	execute(message, args, client) {
         var Spieler = (args[0]);
-        var Spielerkopf = "https://mineskin.de/armor/body/" + Spieler + "/200.png"
-        var url = "https://www.timolia.de/stats/" + Spieler
+        var Spielerkopf = "https://mineskin.de/armor/body/" + Spieler + "/200.png";
+        var url = "https://www.timolia.de/stats/" + Spieler;
 
         // SQL Connection
         var con = mysql.createConnection({
@@ -47,7 +47,7 @@ module.exports = {
                                 .setTimestamp(message.createdAt)
                                 .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
                                 .setColor("#4680FC");
-                            if (!result.firstLogin) return message.channel.send(notfound)
+                            if (!result.firstLogin) return message.channel.send(notfound);
                             return message.channel.send(embed);
                         });
                     });
@@ -66,7 +66,7 @@ module.exports = {
                             .setTimestamp(message.createdAt)
                             .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
                             .setColor("#4680FC");
-                        if (!result.firstLogin) return message.channel.send(notfound)
+                        if (!result.firstLogin) return message.channel.send(notfound);
                         return message.channel.send(embed);
                     });
                 }

@@ -74,7 +74,7 @@ module.exports = {
                     inline: true
                     }
                 );
-            })
+            });
 
             const fehler = new Discord.MessageEmbed()
             .setTitle(`${client.user.username} • Fehler`)
@@ -82,7 +82,7 @@ module.exports = {
             .setTimestamp(message.createdAt)
             .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
             .setColor("#4680FC");
-            if(data.length === 0) message.channel.send(fehler)
+            if(data.length === 0) message.channel.send(fehler);
             else return message.channel.send(embed);
         });
     }
