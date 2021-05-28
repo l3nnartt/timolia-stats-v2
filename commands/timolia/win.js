@@ -18,12 +18,12 @@ module.exports = {
       const gamesWon = result.games[fixedGameMode].games_won;
       const winProbability = (gamesWon / playedgames * 100).toFixed(2);
       var embed = new Discord.MessageEmbed()
-      .setTitle(`${client.user.username} • Gewinnwahrscheinlichkeit`)
-      .setThumbnail(`${Spielerkopf}`)
-      .setDescription(`Der Spieler **${Spieler}** hat in **${Gamemode}** eine Gewinnwahrscheinlichkeit von **${winProbability}%**`)
-      .setTimestamp(message.createdAt)
-      .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
-      .setColor("#4680FC");
+        .setTitle(`${client.user.username} • Gewinnwahrscheinlichkeit`)
+        .setThumbnail(`${Spielerkopf}`)
+        .setDescription(`Der Spieler **${Spieler}** hat in **${Gamemode}** eine Gewinnwahrscheinlichkeit von **${winProbability}%**`)
+        .setTimestamp(message.createdAt)
+        .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
+        .setColor("#4680FC");
       message.channel.send(embed);
     })
 	}

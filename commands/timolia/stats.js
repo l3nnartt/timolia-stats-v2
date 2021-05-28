@@ -35,11 +35,11 @@ module.exports = {
             }).catch(function (err) {
                 console.warn('Fehler bei der Suche nach Statistiken:', err);
                 var errorembed = new Discord.MessageEmbed()
-                .setTitle(`${client.user.username} • Fehler`)
-                .setDescription(`Es konnten keine Statistiken für **${Spieler}** in **${Gamemode}** gefunden werden.`)
-                .setTimestamp(message.createdAt)
-                .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
-                .setColor("#4680FC");
+                    .setTitle(`${client.user.username} • Fehler`)
+                    .setDescription(`Es konnten keine Statistiken für **${Spieler}** in **${Gamemode}** gefunden werden.`)
+                    .setTimestamp(message.createdAt)
+                    .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
+                    .setColor("#4680FC");
                 message.channel.send(errorembed);
             });
         }
@@ -49,23 +49,23 @@ module.exports = {
         const url = "https://timolia.de/stats/" + Spieler;
 
         var errorembed = new Discord.MessageEmbed()
-        .setTitle(`${client.user.username} • Fehler`)
-        .setDescription('Fehlendes Argument, korrekte Benutzung ``!stats [Spielmodus] [Spieler]``')
-        .setTimestamp(message.createdAt)
-        .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
-        .setColor("#4680FC");
+            .setTitle(`${client.user.username} • Fehler`)
+            .setDescription('Fehlendes Argument, korrekte Benutzung ``!stats [Spielmodus] [Spieler]``')
+            .setTimestamp(message.createdAt)
+            .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
+            .setColor("#4680FC");
 
         if(!Gamemode) return message.channel.send(errorembed);
         if(!Spieler) return message.channel.send(errorembed);
 
         getStats(url, `${Gamemode}`, data => {
             const embed = new Discord.MessageEmbed()
-            .setTitle(`${Gamemode} • ${Spieler}`)
-            .setURL(`${url}`)
-            .setThumbnail(`${Spielerkopf}`)
-            .setTimestamp(message.createdAt)
-            .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
-            .setColor("#4680FC");
+                .setTitle(`${Gamemode} • ${Spieler}`)
+                .setURL(`${url}`)
+                .setThumbnail(`${Spielerkopf}`)
+                .setTimestamp(message.createdAt)
+                .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
+                .setColor("#4680FC");
             data.forEach(d => {
                 embed.addFields(
                     {
@@ -77,11 +77,11 @@ module.exports = {
             });
 
             const fehler = new Discord.MessageEmbed()
-            .setTitle(`${client.user.username} • Fehler`)
-            .setDescription(`Es konnten keine Statistiken für **${Spieler}** in **${Gamemode}** gefunden werden.`)
-            .setTimestamp(message.createdAt)
-            .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
-            .setColor("#4680FC");
+                .setTitle(`${client.user.username} • Fehler`)
+                .setDescription(`Es konnten keine Statistiken für **${Spieler}** in **${Gamemode}** gefunden werden.`)
+                .setTimestamp(message.createdAt)
+                .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
+                .setColor("#4680FC");
             if(data.length === 0) message.channel.send(fehler);
             else return message.channel.send(embed);
         });

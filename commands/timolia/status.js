@@ -9,16 +9,16 @@ module.exports = {
 	util.status(`timolia.de`, { port: 25565, enableSRV: true, timeout: 5000, protocolVersion: 47 })
       .then((response) => {
           var embed = new Discord.MessageEmbed()
-          .setTitle(`${client.user.username} • Status`)
-          .setThumbnail(`https://i.imgur.com/NkFEsHW.png`)
-          .addFields(
-            { name: `IP-Adresse:`, value: `${response.host}`, inline: true },
-            { name: `Port:`, value: `${response.port}`, inline: true },
-            { name: `Aktuelle Spieler:`, value: `${response.onlinePlayers} / ${response.maxPlayers}`, inline: true },
-            { name: `Version:`, value: `${response.version}`})
-          .setTimestamp(message.createdAt)
-          .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
-          .setColor("#00FF00");
+            .setTitle(`${client.user.username} • Status`)
+            .setThumbnail(`https://i.imgur.com/NkFEsHW.png`)
+            .addFields(
+              { name: `IP-Adresse:`, value: `${response.host}`, inline: true },
+              { name: `Port:`, value: `${response.port}`, inline: true },
+              { name: `Aktuelle Spieler:`, value: `${response.onlinePlayers} / ${response.maxPlayers}`, inline: true },
+              { name: `Version:`, value: `${response.version}`})
+            .setTimestamp(message.createdAt)
+            .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
+            .setColor("#00FF00");
           message.channel.send(embed);
       })
       .catch((error) => {

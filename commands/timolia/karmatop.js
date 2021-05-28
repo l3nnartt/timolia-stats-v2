@@ -23,11 +23,11 @@ module.exports = {
 			});
 
 			var embed = new Discord.MessageEmbed()
-			.setTitle(`${client.user.username} • Karmatop`)
-			.setFooter(`${client.user.username}`, client.user.displayAvatarURL())
-			.setTimestamp(message.createdAt)
-			.setColor("#4680FC")
-			.addFields(fields);
+				.setTitle(`${client.user.username} • Karmatop`)
+				.setFooter(`${client.user.username}`, client.user.displayAvatarURL())
+				.setTimestamp(message.createdAt)
+				.setColor("#4680FC")
+				.addFields(fields);
 			message.channel.send(embed);
 		});
     }
