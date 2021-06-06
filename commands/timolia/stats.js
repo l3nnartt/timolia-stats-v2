@@ -50,7 +50,7 @@ module.exports = {
 
         var errorembed = new Discord.MessageEmbed()
             .setTitle(`${client.user.username} • Fehler`)
-            .setDescription('Fehlendes Argument, korrekte Benutzung ``!stats [Spielmodus] [Spieler]``')
+            .setDescription('Fehlendes Argument, korrekte Benutzung ``+stats [Spielmodus] [Spieler]``')
             .setTimestamp(message.createdAt)
             .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
             .setColor("#4680FC");

@@ -26,7 +26,7 @@ module.exports = {
                         { name: 'Version', value: `${config.version}`, inline: true},
                         { name: 'Entwickler', value: `<@398101340322136075>`, inline: true},
                         { name: 'Datenbeschaffung', value: 'Die gesamten Daten stammen von der offiziellen [Timolia Website](https://timolia.de/stats). Trotzdem besteht keine Garantie auf Aktualität und Richtigkeit der Daten!' },
-                        { name: 'Karma Top 10', value: 'Die Karmatoplist wird manuell aktualisiert, den aktuellen Stand der Liste findet ihr unter der Toplist.' },
+                        { name: 'Karma Top 10', value: 'Die Karmatoplist wird manuell aktualisiert, ggf. kann man die Erfolgspunkte via Labymod Addon automatisch aktualisieren lassen.' },
                         { name: 'Hilfe & Fragen', value: 'Solltest du bei etwas Hilfe benötigen, oder eine Frage haben kannst du dich jederzeit bei [Mr_Milchmann_LP#0001](https://discord.com/users/398101340322136075) melden. \nAußerdem gibt es einen [Support Server](https://discord.gg/3HMw6UvWbq), auf welchem du dich melden kannst solltest du Hilfe benötigen oder eine Frage haben.' })
                     .setTimestamp(message.createdAt)
                     .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
