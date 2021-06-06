@@ -8,9 +8,20 @@ module.exports = {
   args: true,
   usage: '[Gamemode] [Spieler]',
 	execute(message, args, client) {
-    var Gamemode = (args[0]);
+    var Gamemode = (args[0]).toLowerCase();
     var Spieler = (args[1]);
     let Spielerkopf = "https://cravatar.eu/helmavatar/" + Spieler + "/60.png";
+
+    var errorembed = new Discord.MessageEmbed()
+      .setTitle(`${client.user.username} • Fehler`)
+      .setDescription('Fehlendes Argument, korrekte Benutzung ``+winprobably [Spielmodus] [Spieler]``')
+      .setTimestamp(message.createdAt)
+      .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
+      .setColor("#4680FC");
+
+  if(!Gamemode) return message.channel.send(errorembed);
+  if(!Spieler) return message.channel.send(errorembed);
+
     mc.timolia(Spieler)
     .then(result => {
       const fixedGameMode = Gamemode === '1vs1' ? 'duels' : Gamemode;
