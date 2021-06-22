@@ -2,8 +2,8 @@ const Discord = require("discord.js");
 const mc = require("mc-stats");
 
 module.exports = {
-	name: 'winprobably',
-	description: 'Rechnet dir die Gewinnwahrscheinlichkeit eines Spielers aus',
+	name: 'win',
+	description: 'Rechnet dir die Gewinnwahrscheinlichkeit eines Spielers in einem bestimmten Modus aus',
 	cooldown: 5,
   args: true,
   usage: '[Gamemode] [Spieler]',
@@ -14,7 +14,7 @@ module.exports = {
 
     var errorembed = new Discord.MessageEmbed()
       .setTitle(`${client.user.username} • Fehler`)
-      .setDescription('Fehlendes Argument, korrekte Benutzung ``+winprobably [Spielmodus] [Spieler]``')
+      .setDescription('Fehlendes Argument, korrekte Benutzung ``+win [Spielmodus] [Spieler]``')
       .setTimestamp(message.createdAt)
       .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
       .setColor("#4680FC");
