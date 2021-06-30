@@ -58,7 +58,9 @@ module.exports = {
         if(!Gamemode) return message.channel.send(errorembed);
         if(!Spieler) return message.channel.send(errorembed);
 
-        getStats(url, `${Gamemode}`, data => {
+        const fixedGameMode = Gamemode === 'survivalquest' ? 'Survival Quest' : Gamemode;
+
+        getStats(url, `${fixedGameMode}`, data => {
             const embed = new Discord.MessageEmbed()
                 .setTitle(`${Gamemode} • ${Spieler}`)
                 .setURL(`${url}`)
