@@ -9,19 +9,24 @@ module.exports = {
 			//TimeStamp
 			const timestamp = new Date();
 
-			//File Log
-			fs.appendFile(`./debug.log`, `timestamp: ${timestamp};\t Author: ${message.author.tag};\t Content: ${message.content};\n`, function (err) {
-				if (err) throw err;
-			});
+			//Log Check
+			if (message.author.id == "803579214553022484") {
+				return;
+			} else {
+				//Discord Log
+				var embed = new Discord.MessageEmbed()
+					.setAuthor(`${message.author.tag}`, message.author.displayAvatarURL())
+					.setDescription(`${message.content}`)
+					.setTimestamp(message.createdAt)
+					.setFooter(`${client.user.username} Log-System`)
+					.setColor("#2a2a2a");
+				client.channels.fetch('828385793528561694').then(channel => channel.send(embed));
 
-			//Discord Log
-			var embed = new Discord.MessageEmbed()
-				.setAuthor(`${message.author.tag}`, message.author.displayAvatarURL())
-				.setDescription(`${message.content}`)
-				.setTimestamp(message.createdAt)
-				.setFooter(`${client.user.username} Log-System`)
-				.setColor("#2a2a2a");
-			client.channels.fetch('828385793528561694').then(channel => channel.send(embed));
+				//File Log
+				fs.appendFile(`./debug.log`, `timestamp: ${timestamp};\t Author: ${message.author.tag};\t Content: ${message.content};\n`, function (err) {
+					if (err) throw err;
+				});
+			}
 
 			//Serverlist
 			if (message.content == `botinfo`) {
