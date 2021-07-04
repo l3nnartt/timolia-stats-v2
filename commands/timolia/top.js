@@ -56,21 +56,41 @@ module.exports = {
             onStats(stats);
         }
         var Gamemode = (args[0]).toLowerCase();
-        fetchLeaderboards(`${Gamemode}`, 10, (data) => {
-          var embed = new Discord.MessageEmbed()
-            .setTitle(`Top 10 • ${Gamemode}`)
-            .setURL(`https://www.timolia.de/game/${Gamemode}/leaderboard`)
-            .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
-            .setTimestamp(message.createdAt)
-            .setColor("#4680FC");
-          data.forEach(d => {
-            embed.addFields(
-              {
-                name: `${d.rank} ${d.name}`, value: `Punkte: ${d.points}`
-              }
-            );
-          });
-          message.channel.send(embed);
-        });
+
+        if (Gamemode == `survivalquest`) {
+            fetchLeaderboards(`${Gamemode}`, 10, (data) => {
+                var embed = new Discord.MessageEmbed()
+                  .setTitle(`Top 10 • ${Gamemode}`)
+                  .setURL(`https://www.timolia.de/game/${Gamemode}/leaderboard`)
+                  .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
+                  .setTimestamp(message.createdAt)
+                  .setColor("#4680FC");
+                data.forEach(d => {
+                  embed.addFields(
+                    {
+                      name: `${d.rank} ${d.name}`, value: `Highscore: ${d.max_score}`
+                    }
+                  );
+                });
+                message.channel.send(embed);
+            });
+        } else {
+            fetchLeaderboards(`${Gamemode}`, 10, (data) => {
+                var embed = new Discord.MessageEmbed()
+                  .setTitle(`Top 10 • ${Gamemode}`)
+                  .setURL(`https://www.timolia.de/game/${Gamemode}/leaderboard`)
+                  .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
+                  .setTimestamp(message.createdAt)
+                  .setColor("#4680FC");
+                data.forEach(d => {
+                  embed.addFields(
+                    {
+                      name: `${d.rank} ${d.name}`, value: `Punkte: ${d.points}`
+                    }
+                  );
+                });
+                message.channel.send(embed);
+            });
+        }        
     }
 };
