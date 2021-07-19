@@ -13,11 +13,11 @@ module.exports = {
     let Spielerkopf = "https://cravatar.eu/helmavatar/" + Spieler + "/60.png";
 
     var errorembed = new Discord.MessageEmbed()
-      .setTitle(`${client.user.username} • Fehler`)
-      .setDescription('Fehlendes Argument, korrekte Benutzung ``+win [Spielmodus] [Spieler]``')
-      .setTimestamp(message.createdAt)
-      .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
-      .setColor("#4680FC");
+    .setTitle(`${client.user.username} • Fehler`)
+    .setDescription('Fehlendes Argument, korrekte Benutzung ``+win [Spielmodus] [Spieler]``')
+    .setTimestamp(message.createdAt)
+    .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
+    .setColor("#4680FC");
 
   if(!Gamemode) return message.channel.send(errorembed);
   if(!Spieler) return message.channel.send(errorembed);
