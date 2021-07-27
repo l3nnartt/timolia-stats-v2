@@ -14,7 +14,7 @@ module.exports = {
 		}})
 		.then((res) => res.json())
 		.then((data) => {
-			const fields = new Array();
+			const fields = [];
 			data.forEach(function(item, index) {
 				fields.push({
 					name: `${index + 1}. ${item.player}`,
@@ -22,7 +22,7 @@ module.exports = {
 				});
 			});
 
-			var embed = new Discord.MessageEmbed()
+			const embed = new Discord.MessageEmbed()
 				.setTitle(`${client.user.username} • Karmatop`)
 				.setFooter(`${client.user.username}`, client.user.displayAvatarURL())
 				.setTimestamp(message.createdAt)
