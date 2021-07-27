@@ -33,9 +33,7 @@ module.exports = {
         if(!spieler) return message.channel.send(fail);
 
         if (gamemode === "pxlspace") {
-            const url =
-                `https://hosting151773.a2e37.netcup.net/lennart/timolia/addon/pxl-api-test.php?name=` +
-                spieler;
+            const url = `https://hosting151773.a2e37.netcup.net/lennart/timolia/addon/pxl-api-test.php?name=` + spieler;
             fetch(url, {
                 method: "GET",
                 headers: {
