@@ -32,7 +32,7 @@ client.on('message', message => {
     if (message.content.includes("@here") || message.content.includes("@everyone")) return false;
 
     if (message.mentions.has(client.user.id)) {
-        message.channel.send(`Mein Prefix ist \`\`${prefix}\`\``);
+        message.channel.send(`Mein Prefix ist \`${prefix}\``);
     };
 
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
