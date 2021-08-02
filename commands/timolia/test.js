@@ -4,8 +4,8 @@ function fetchLeaderboards(statName, limit, onData) {
     const url = `https://www.timolia.de/game/${statName.toLowerCase()}/leaderboard`;
     try{
         (async () => {
-            // const browser = await puppeteer.connect({browserWSEndpoint: 'wss://chrome.browserless.io/'});
-            const browser = await puppeteer.launch();
+            const browser = await puppeteer.connect({browserWSEndpoint: 'wss://chrome.browserless.io/'});
+            //const browser = await puppeteer.launch();
             const page = await browser.newPage();
             await page.goto(url);
             await page.waitForSelector('tbody > tr > td > a', {
