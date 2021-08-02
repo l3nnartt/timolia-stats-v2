@@ -9,29 +9,35 @@ module.exports = {
     args: true,
     cooldown: 5,
     usage: '[Spielmodus]',
-    execute: function (message, args, client) {
+	execute(message, args, client) {
         function fetchLeaderboards(statName, limit, onData) {
             const url = `https://www.timolia.de/game/${statName.toLowerCase()}/leaderboard`;
-            (async () => {
-                const browser = await puppeteer.connect({browserWSEndpoint: 'wss://chrome.browserless.io/'});
-                const page = await browser.newPage();
-                await page.goto(url);
-                await page.waitForSelector('tbody > tr > td > a', {
-                    visible: true,
-                });
-                const content = await page.content();
-                saveStats(content, limit, (stats) => onData(stats));
-                await browser.close();
-            });
+            console.log("fetch")
+            try {
+                console.log("try")
+                async () => {
+                    console.log("test")
+                    const browser = await puppeteer.connect({browserWSEndpoint: 'wss://chrome.browserless.io/'});
+                    const page = await browser.newPage();
+                    await page.goto(url);
+                    await page.waitForSelector('tbody > tr > td > a', {
+                        visible: true,
+                    });
+                    const content = await page.content();
+                    saveStats(content, limit, (stats) => onData(stats));
+                    await browser.close();
+                };
+            } catch(error){
+                console.error('Error in async', error)
+            }
         }
-
         function saveStats(data, limit, onStats) {
-            var stats = [];
+            var stats = new Array();
             var parser = new DOMParser();
             var doc = parser.parseFromString(data, 'text/html');
             var rows = doc.getElementsByTagName('tr');
             var header = rows[0].getElementsByTagName('th');
-            var headerItems = [];
+            var headerItems = new Array();
             header.forEach(item => {
                 headerItems.push(item.getAttribute('id'));
             });
@@ -84,7 +90,6 @@ module.exports = {
                     message.channel.send(pxl);
                 });
         }
-
 
         if (Gamemode === `survivalquest`) {
             fetchLeaderboards(`${Gamemode}`, 10, (data) => {
