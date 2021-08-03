@@ -1,6 +1,5 @@
 {
 	"prefix": "PREFIX",
 	"token": "TOKEN",
-	"version": "VERSION",
-	"autoposter": "APITOKEN"
+	"version": "VERSION"
 }

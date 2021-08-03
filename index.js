@@ -1,10 +1,6 @@
-const { token, autoposter } = require('./config.json');
+const { token } = require('./config.json');
 const { ShardingManager } = require('discord.js');
 const manager = new ShardingManager('./bot.js', { token: `${token}` });
-
-//AutoPoster - TopGG Stats
-const AutoPoster = require('topgg-autoposter');
-const ap = AutoPoster(`${autoposter}`, manager);
 
 //Sharding Manager
 manager.on('message', (shard, message) => {

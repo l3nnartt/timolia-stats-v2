@@ -5,7 +5,6 @@
     "mc-stats": "^1.0.7",
     "minecraft-server-util": "^3.5.2",
     "node-fetch": "^2.6.1",
-    "puppeteer": "^10.1.0",
-    "topgg-autoposter": "^2.0.0"
+    "puppeteer": "^10.1.0"
   }
 }
