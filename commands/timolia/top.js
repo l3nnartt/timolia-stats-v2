@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 const DOMParser = require('dom-parser');
 const puppeteer = require('puppeteer');
+const fetch = require('node-fetch');
 
 module.exports = {
 	name: 'top',
@@ -13,7 +14,6 @@ module.exports = {
             try{
                 (async () => {
                     const browser = await puppeteer.connect({browserWSEndpoint: 'wss://chrome.browserless.io/'});
-                    //const browser = await puppeteer.launch();
                     const page = await browser.newPage();
                     await page.goto(url);
                     await page.waitForSelector('tbody > tr > td > a', {
@@ -61,6 +61,7 @@ module.exports = {
         }
 
         var Gamemode = (args[0]).toLowerCase();
+
         if (Gamemode === "pxlspace") {
           const url =`https://hosting151773.a2e37.netcup.net/lennart/timolia/addon/pxl-top.php`;
           fetch(url, {
@@ -69,58 +70,60 @@ module.exports = {
                   Accept: "application/json",
               },
           })
-          .then((res) => res.json())
-          .then((data) => {
-              const pxl = new Discord.MessageEmbed()
-                  .setTitle(`Top 10 • ${Gamemode}`)
-                  .setURL(`https://karmatop.de/addon/pxl-top.php`)
-                  .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
-                  .setTimestamp(message.createdAt)
-                  .setColor("#4680FC");
-              data.forEach(function(item, index) {
-                  pxl.addFields({
-                      name: `${index + 1}. ${item.name}`,
-                      value: item.total + ` Blöcke`
-                  });
-              });
-              message.channel.send(pxl);
-          });
+        .then((res) => res.json())
+        .then((data) => {
+            const pxl = new Discord.MessageEmbed()
+                .setTitle(`Top 10 • ${Gamemode}`)
+                .setURL(`https://karmatop.de/addon/pxl-top.php`)
+                .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
+                .setTimestamp(message.createdAt)
+                .setColor("#4680FC");
+            data.forEach(function(item, index) {
+                pxl.addFields({
+                    name: `${index + 1}. ${item.name}`,
+                    value: item.total + ` Blöcke`
+                });
+            });
+            message.channel.send(pxl);
+        });
       }
 
       if (Gamemode === `survivalquest`) {
-          fetchLeaderboards(`${Gamemode}`, 10, (data) => {
-              var embed = new Discord.MessageEmbed()
-                  .setTitle(`Top 10 • ${Gamemode}`)
-                  .setURL(`https://www.timolia.de/game/${Gamemode}/leaderboard`)
-                  .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
-                  .setTimestamp(message.createdAt)
-                  .setColor("#4680FC");
-              data.forEach(d => {
-                  embed.addFields(
-                      {
-                          name: `${d.rank} ${d.name}`, value: `Highscore: ${d.max_score}`
-                      }
-                  );
-              });
-              message.channel.send(embed);
-          });
-      } else {
-          fetchLeaderboards(`${Gamemode}`, 10, (data) => {
-              var embed = new Discord.MessageEmbed()
-                  .setTitle(`Top 10 • ${Gamemode}`)
-                  .setURL(`https://www.timolia.de/game/${Gamemode}/leaderboard`)
-                  .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
-                  .setTimestamp(message.createdAt)
-                  .setColor("#4680FC");
-              data.forEach(d => {
-                  embed.addFields(
-                      {
-                          name: `${d.rank} ${d.name}`, value: `Punkte: ${d.points}`
-                      }
-                  );
-              });
-              message.channel.send(embed);
-          });
+        fetchLeaderboards(`${Gamemode}`, 10, (data) => {
+            var embed = new Discord.MessageEmbed()
+                .setTitle(`Top 10 • ${Gamemode}`)
+                .setURL(`https://www.timolia.de/game/${Gamemode}/leaderboard`)
+                .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
+                .setTimestamp(message.createdAt)
+                .setColor("#4680FC");
+            data.forEach(d => {
+                embed.addFields(
+                    {
+                        name: `${d.rank} ${d.name}`, value: `Highscore: ${d.max_score}`
+                    }
+                );
+            });
+            message.channel.send(embed);
+        });
+      }
+      
+      else {
+        fetchLeaderboards(`${Gamemode}`, 10, (data) => {
+            var embed = new Discord.MessageEmbed()
+                .setTitle(`Top 10 • ${Gamemode}`)
+                .setURL(`https://www.timolia.de/game/${Gamemode}/leaderboard`)
+                .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
+                .setTimestamp(message.createdAt)
+                .setColor("#4680FC");
+            data.forEach(d => {
+                embed.addFields(
+                    {
+                        name: `${d.rank} ${d.name}`, value: `Punkte: ${d.points}`
+                    }
+                );
+            });
+            message.channel.send(embed);
+        });
       }
     }
 };
