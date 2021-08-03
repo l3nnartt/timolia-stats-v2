@@ -4,8 +4,9 @@ const manager = new ShardingManager('./bot.js', { token: `${token}` });
 
 //AutoPoster - TopGG Stats
 const AutoPoster = require('topgg-autoposter');
-//const ap = AutoPoster(`${autoposter}`, manager);
+const ap = AutoPoster(`${autoposter}`, manager);
 
+//Sharding Manager
 manager.on('message', (shard, message) => {
 	console.log(`Shard[${shard.id}] : ${message._eval} : ${message._result}`);
 });
