@@ -75,6 +75,7 @@ module.exports = {
             const pxl = new Discord.MessageEmbed()
                 .setTitle(`Top 10 • ${Gamemode}`)
                 .setURL(`https://karmatop.de/addon/pxl-top.php`)
+                .setDescription("Es werden nur Spieler in die Statistiken mit einbezogen, welche das Timolia Addon in LabyMod installiert haben. Dies sind keine offiziellen Statistiken.")
                 .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
                 .setTimestamp(message.createdAt)
                 .setColor("#4680FC");

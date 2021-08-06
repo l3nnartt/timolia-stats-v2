@@ -24,6 +24,7 @@ module.exports = {
 
 			const embed = new Discord.MessageEmbed()
 				.setTitle(`${client.user.username} • Karmatop`)
+				.setURL("https://karmatop.de/karmatop.php")
 				.setFooter(`${client.user.username}`, client.user.displayAvatarURL())
 				.setTimestamp(message.createdAt)
 				.setColor("#4680FC")
