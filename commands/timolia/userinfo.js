@@ -14,7 +14,7 @@ module.exports = {
         var Spieler = (args[0]);
         var Spielerkopf = "https://mineskin.de/armor/body/" + Spieler + "/200.png";
         var url = "https://www.timolia.de/stats/" + Spieler;
-        var api = "https://hosting151773.a2e37.netcup.net/lennart/timolia/addon/karma.php?name=" + Spieler;
+        var api = "https://karmatop.de/addon/karma.php?name=" + Spieler;
 
         const notfound = new Discord.MessageEmbed()
             .setTitle(`${client.user.username} • Fehler`)

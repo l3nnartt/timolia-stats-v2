@@ -63,7 +63,7 @@ module.exports = {
         var Gamemode = (args[0]).toLowerCase();
 
         if (Gamemode === "pxlspace") {
-          const url =`https://hosting151773.a2e37.netcup.net/lennart/timolia/addon/pxl-top.php`;
+          const url =`https://karmatop.de/addon/pxl-top.php`;
           fetch(url, {
               method: "GET",
               headers: {

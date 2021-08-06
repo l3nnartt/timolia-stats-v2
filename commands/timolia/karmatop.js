@@ -6,7 +6,7 @@ module.exports = {
 	cooldown: 5,
 	description: 'karmatop',
 	execute(message, args, client) {
-		const url = `https://hosting151773.a2e37.netcup.net/lennart/timolia/addon/karmatop.php`;
+		const url = `https://karmatop.de/addon/karmatop.php`;
 		fetch(url, {
 		method: 'GET',
 		headers: {
