@@ -1,4 +1,5 @@
 const util = require('minecraft-server-util');
+const Discord = require("discord.js");
 
 module.exports = {
 	name: 'ready',
@@ -62,8 +63,8 @@ module.exports = {
 		//Discord Message
 		var embed = new Discord.MessageEmbed()
 			.setDescription(`Bot erfolgreich gestartet`)
-			.setTimestamp(message.createdAt)
-			.setColor("#2a2a2a");
+			.setTimestamp()
+			.setColor("#00FF00");
 	  	client.channels.fetch('828385793528561694').then(channel => channel.send(embed));
 	},
 };
