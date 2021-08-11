@@ -58,5 +58,12 @@ module.exports = {
 					);
 				});
   		},15000);
+
+		//Discord Message
+		var embed = new Discord.MessageEmbed()
+			.setDescription(`Bot erfolgreich gestartet`)
+			.setTimestamp(message.createdAt)
+			.setColor("#2a2a2a");
+	  	client.channels.fetch('828385793528561694').then(channel => channel.send(embed));
 	},
 };
