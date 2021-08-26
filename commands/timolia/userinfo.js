@@ -38,7 +38,7 @@ module.exports = {
                         .addFields(
                             { name: `Name`, value: `${result.name}` },
                             { name: `Rang`, value: `${result.rank}` },
-                            { name: `Beitritt`, value: `${result.firstLogin}` },
+                            { name: `Beitritt`, value: `${result.firstLogin.toDateString()}` },
                             { name: `Freunde`, value: `${result.friends}` })
                         .setTimestamp(message.createdAt)
                         .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
