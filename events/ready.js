@@ -36,28 +36,30 @@ module.exports = {
 
 		//Rich Presence/RPC
 		setInterval(() => {
-			util.status(`timolia.de`, { port: 25565, enableSRV: true, timeout: 5000, protocolVersion: 47 })
-	  			.then((response) => {
-			const activities = [
-				`mit ${response.onlinePlayers} Spielern | +help`
-			];
-			let activity = activities[Math.floor(Math.random() * activities.length)];
-			client.user.setActivity(activity,
+			util.status('timolia.de')
+			.then((response) => {
+				const activities = [
+					`mit ${response.onlinePlayers} Spielern | +help`
+				];
+				let activity = activities[Math.floor(Math.random() * activities.length)];
+				client.user.setActivity(activity,
 					{
-		  				type: "PLAYING"
+						type: "PLAYING"
 					}
 				);
-			}).catch(function (err) {
+			})
+			.catch((error) => {
+				//console.error(error);
 				const activities = [
 					`mit 0 Spielern | +help`
 				];
 				let activity = activities[Math.floor(Math.random() * activities.length)];
 				client.user.setActivity( activity,
-						{
-							  type: "PLAYING"
-						}
-					);
-				});
+					{
+						type: "PLAYING"
+					}
+				);
+			});
   		},15000);
 
 		//Discord Message
