@@ -1,7 +1,6 @@
 const mc = require("mc-stats");
 const Discord = require("discord.js");
 const fetch = require('node-fetch');
-const karmatop = require("./karmatop");
 
 module.exports = {
 	name: 'userinfo',
