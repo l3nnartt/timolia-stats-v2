@@ -33,7 +33,7 @@ module.exports = {
         if(!spieler) return message.channel.send(fail);
 
         if (gamemode === "pxlspace") {
-            const url = `https://karmatop.de/addon/pxl-api-test.php?name=` + spieler;
+            const url = `https://karmatop.de/addon/pxl-api.php?name=` + spieler;
             fetch(url, {
                 method: "GET",
                 headers: {
@@ -109,7 +109,7 @@ module.exports = {
                 });
                 onData(data);
             }).catch(function (err) {
-                console.warn('Fehler bei der Suche nach Statistiken:', err);
+                //console.warn('Fehler bei der Suche nach Statistiken:', err);
                 message.channel.send(errorembed);
             });
         }
