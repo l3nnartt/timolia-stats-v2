@@ -34,7 +34,7 @@ module.exports = {
 
                 if (!result.name) return message.channel.send(notfound);
 
-                const karmatop = new Discord.MessageEmbed()
+                const userinfo = new Discord.MessageEmbed()
                     .setTitle(`${client.user.username} • Userinfo für ${result.name}`)
                     .setURL(`${url}`)
                     .setThumbnail(`${Spielerkopf}`)
@@ -42,18 +42,12 @@ module.exports = {
                         { name: `Name`, value: `${result.name}` },
                         { name: `Rang`, value: `${result.rank}` },
                         { name: `Beitritt`, value: `${result.firstLogin.toDateString()}` },
-                        { name: `Freunde`, value: `${result.friends}` })
+                        { name: `Freunde`, value: `${result.friends}` },
+                        { name: `Karma`, value: `${data.karma}` })
                     .setTimestamp(message.createdAt)
                     .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
                     .setColor("#4680FC");
-                
-                if (data === null) {
-                    karmatop.addFields({ name: `Erfolgspunkte`, value: `Kein Karma gefunden`});
-                    message.channel.send(karmatop);
-                } else {
-                    karmatop.addFields({ name: `Erfolgspunkte`, value: `${data[0].karma}`});
-                    message.channel.send(karmatop);
-                }
+                message.channel.send(userinfo);
             });
         });
     },
