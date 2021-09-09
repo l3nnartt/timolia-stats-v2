@@ -47,7 +47,7 @@ module.exports = {
                     .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
                     .setColor("#4680FC");
                 
-                if (data.length === 0) {
+                if (data === null) {
                     karmatop.addFields({ name: `Erfolgspunkte`, value: `Kein Karma gefunden`});
                     message.channel.send(karmatop);
                 } else {
