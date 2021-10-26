@@ -128,3 +128,19 @@ module.exports = {
       }
     }
 };
+
+// Um die API für die Leaderboards zu nutzen ->
+
+//var request = require('request');
+//var options = {
+//    'method': 'GET',
+//    'url': 'https://www.timolia.de/api/leaderboard/',
+//    'headers': {
+//        'X-Requested-With': 'XMLHttpRequest',
+//        'Cookie': 'hl=de'
+//    }
+//};
+//request(options, function (error, response) {
+//    if (error) throw new Error(error);
+//    console.log(response.body);
+//});
