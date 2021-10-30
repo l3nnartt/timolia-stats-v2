@@ -1,36 +1,37 @@
-const Discord = require("discord.js");
-const DOMParser = require('dom-parser');
+const { SlashCommandBuilder } = require('@discordjs/builders');
+const { MessageActionRow, MessageButton, MessageEmbed } = require('discord.js');
 const fetch = require('node-fetch');
+const DOMParser = require('dom-parser');
 
 module.exports = {
-	name: 'stats',
-	description: 'Gibt dir die Statistiken von einem Spieler',
-    args: true,
-    cooldown: 5,
-    usage: '[Spielmodus] [Spieler]',
-	execute(message, args, client) {
+    data: new SlashCommandBuilder()
+        .setName('stats')
+        .setDescription('Gibt dir die Statistiken von einem Spieler')
+        .addStringOption(option => option.setName('player').setDescription('Wähle den Spieler von welchem du die Statistiken sehen möchtest').setRequired(true))
+        .addStringOption(option => option.setName('gamemode').setDescription('Wähle den Spielmodus von welchem du die Statistiken sehen möchtest').setRequired(true)),
+    async execute(interaction, client) {
+        const spieler = interaction.options.getString('player');
+        const gamemode = interaction.options.getString('gamemode');
 
-        let gamemode = (args[0]).toLowerCase();
-        let spieler = (args[1]);
         let spielerkopf = "https://cravatar.eu/helmavatar/" + spieler + "/60.png"
         const url = "https://timolia.de/stats/" + spieler;
 
-        const fail = new Discord.MessageEmbed()
+        const fail = new MessageEmbed()
             .setTitle(`${client.user.username} • Fehler`)
-            .setDescription('Fehlendes Argument, korrekte Benutzung ``+stats [Spielmodus] [Spieler]``')
-            .setTimestamp(message.createdAt)
+            .setDescription('Fehlendes Argument, korrekte Benutzung ``/stats [Spielmodus] [Spieler]``')
+            .setTimestamp(interaction.createdAt)
             .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
             .setColor("#4680FC");
 
-        const errorembed = new Discord.MessageEmbed()
+        const errorembed = new MessageEmbed()
             .setTitle(`${client.user.username} • Fehler`)
             .setDescription(`Es konnten keine Statistiken für **${spieler}** in **${gamemode}** gefunden werden.`)
-            .setTimestamp(message.createdAt)
+            .setTimestamp(interaction.createdAt)
             .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
             .setColor("#4680FC");
 
-        if(!gamemode) return message.channel.send(fail);
-        if(!spieler) return message.channel.send(fail);
+        if(!gamemode) return interaction.reply({embeds: [fail]});
+        if(!spieler) return interaction.reply({embeds: [fail]});
 
         if (gamemode === "pxlspace") {
             const url = `https://karmatop.de/addon/pxl-api.php?name=` + spieler;
@@ -42,16 +43,16 @@ module.exports = {
             })
                 .then((res) => res.json())
                 .then((data) => {
-                    const pxl = new Discord.MessageEmbed()
+                    const pxl = new MessageEmbed()
                         .setTitle(`${gamemode} • ${spieler}`)
                         .setURL(`${url}`)
                         .setThumbnail(`${spielerkopf}`)
-                        .setTimestamp(message.createdAt)
+                        .setTimestamp(interaction.createdAt)
                         .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
                         .setColor("#4680FC");
                     for (var key of Object.keys(data)) {
                         var v = data[key];
-                        if (key != "uuid" && key != "name") {
+                        if (key !== "uuid" && key !== "name") {
                             pxl.addFields({
                                 name: key,
                                 value: v,
@@ -63,11 +64,11 @@ module.exports = {
                 });
         } else {
             getStats(url, `${gamemode}`, data => {
-                const embed = new Discord.MessageEmbed()
+                const embed = new MessageEmbed()
                     .setTitle(`${gamemode} • ${spieler}`)
                     .setURL(`${url}`)
                     .setThumbnail(`${spielerkopf}`)
-                    .setTimestamp(message.createdAt)
+                    .setTimestamp(interaction.createdAt)
                     .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
                     .setColor("#4680FC");
                 data.forEach(d => {
@@ -80,8 +81,8 @@ module.exports = {
                     );
                 });
 
-                if(data.length === 0) message.channel.send(errorembed);
-                else return message.channel.send(embed);
+                if(data.length === 0) interaction.reply({embeds: [errorembed]});
+                else return interaction.reply({embeds: [embed]});
             });
         }
 
@@ -110,8 +111,8 @@ module.exports = {
                 onData(data);
             }).catch(function (err) {
                 //console.warn('Fehler bei der Suche nach Statistiken:', err);
-                message.channel.send(errorembed);
+                interaction.reply({embeds: [errorembed]});
             });
         }
-    }
+    },
 };
