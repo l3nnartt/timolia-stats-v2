@@ -30,7 +30,8 @@ module.exports = {
                     { name: `Name`, value: `${result.name}` },
                     { name: `Rang`, value: `${result.rank}` },
                     { name: `Beitritt`, value: `${result.firstLogin.toDateString()}` },
-                    { name: `Freunde`, value: `${result.friends}` })
+                    { name: `Freunde`, value: `${result.friends}` },
+                    { name: `Karma`, value: `${result.karma}` })
                 .setTimestamp(interaction.createdAt)
                 .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
                 .setColor("#4680FC");
