@@ -13,7 +13,7 @@ module.exports = {
       .setColor("red");
     const user = (args[0]);
     if(!user) return message.channel.send(fehler);
-    if (message.author.id == '398101340322136075') {
+    if (message.author.id === '398101340322136075') {
       const nachricht = args.slice(1).join(' ');
       client.users.cache.get(user).send(nachricht);
     } else {
