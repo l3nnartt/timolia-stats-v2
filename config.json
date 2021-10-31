@@ -1,7 +1,6 @@
 {
-	"prefix": "+",
-	"token": "Nzg4NDUwNzc0NjQ4NzUwMDkw.X9jsAQ.nyico7gV4EYpEJSSWt8QK2-6_ZI",
+	"token": "TOKEN",
 	"version": "VERSION",
-	"clientId": "788450774648750090",
-	"guildId": "398106323415334913"
+	"clientId": "CLIENT_ID",
+	"guildId": "GUILD_ID"
 }
