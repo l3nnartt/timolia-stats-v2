@@ -1,16 +1,19 @@
 const fs = require('fs');
-const Discord = require("discord.js");
+const Discord = require('discord.js');
 
 module.exports = {
 	name: 'message',
 	execute(message, client) {
-		if (message.channel.type == 'dm') {
+
+		console.log("test")
+
+		if (message.channel.type === 'dm') {
 			
 			//TimeStamp
 			const timestamp = new Date();
 
 			//Log Check
-			if (message.author.id == "803579214553022484") {
+			if (message.author.id === "803579214553022484") {
 				return;
 			} else {
 				//Discord Log
@@ -20,7 +23,7 @@ module.exports = {
 					.setTimestamp(message.createdAt)
 					.setFooter(`${client.user.username} Log-System`)
 					.setColor("#2a2a2a");
-				client.channels.fetch('828385793528561694').then(channel => channel.send(embed));
+				client.channels.cache.get('828385793528561694').send({embeds: [embed]});
 
 				//File Log
 				fs.appendFile(`./debug.log`, `timestamp: ${timestamp};\t Author: ${message.author.tag};\t Content: ${message.content};\n`, function (err) {
@@ -29,8 +32,8 @@ module.exports = {
 			}
 
 			//Serverlist
-			if (message.content == `botinfo`) {
-				if (message.author.id == "398101340322136075") {
+			if (message.content === `botinfo`) {
+				if (message.author.id === "398101340322136075") {
 					var botinfo = new Discord.MessageEmbed()
 						.setDescription(`Server: ${client.guilds.cache.size}`)
 						.setTimestamp(message.createdAt)
@@ -53,7 +56,7 @@ module.exports = {
 						.setTimestamp(message.createdAt)
 						.setFooter(`${client.user.username}`)
 						.setColor("red");
-					message.channel.send(fehler);
+					client.channels.cache.get('828385793528561694').send({embeds: [fehler]});
 				}
 			}
 		}
