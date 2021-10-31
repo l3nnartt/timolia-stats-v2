@@ -5,9 +5,9 @@ const mc = require("mc-stats");
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('win')
-        .setDescription('Checks the latency between command and answer')
-        .addStringOption(option => option.setName('player').setDescription('Wähle den Spieler von welchem du die Statistiken sehen möchtest').setRequired(true))
-        .addStringOption(option => option.setName('gamemode').setDescription('Wähle den Spielmodus von welchem du die Statistiken sehen möchtest').setRequired(true)),
+        .setDescription('Errechnet die Gewinnwahrscheinlichkeit in einem Modus von einem Spieler')
+        .addStringOption(option => option.setName('player').setDescription('Wähle einen Spieler von welchem du die  Gewinnwahrscheinlichkeit sehen möchtest').setRequired(true))
+        .addStringOption(option => option.setName('gamemode').setDescription('Wähle den Spielmodus von welchem du die  Gewinnwahrscheinlichkeit sehen möchtest').setRequired(true)),
     async execute(interaction, client) {
         const Spieler = interaction.options.getString('player');
         const Gamemode = interaction.options.getString('gamemode');
