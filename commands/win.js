@@ -6,16 +6,17 @@ module.exports = {
     data: new SlashCommandBuilder()
         .setName('win')
         .setDescription('Errechnet die Gewinnwahrscheinlichkeit in einem Modus von einem Spieler')
-        .addStringOption(option => option.setName('player').setDescription('Wähle einen Spieler von welchem du die  Gewinnwahrscheinlichkeit sehen möchtest').setRequired(true))
-        .addStringOption(option => option.setName('gamemode').setDescription('Wähle den Spielmodus von welchem du die  Gewinnwahrscheinlichkeit sehen möchtest').setRequired(true)),
+        .addStringOption(option => option.setName('spieler').setDescription('Wähle einen Spieler von welchem du die  Gewinnwahrscheinlichkeit sehen möchtest').setRequired(true))
+        .addStringOption(option => option.setName('spielmodus').setDescription('Wähle den Spielmodus von welchem du die  Gewinnwahrscheinlichkeit sehen möchtest').setRequired(true)),
     async execute(interaction, client) {
-        const Spieler = interaction.options.getString('player');
-        const Gamemode = interaction.options.getString('gamemode');
+        const Spieler = interaction.options.getString('spieler');
+        const Gamemode = interaction.options.getString('spielmodus').toLowerCase();
+        const fixedGameMode = Gamemode === '1vs1' ? 'duels' : Gamemode;
         let Spielerkopf = "https://cravatar.eu/helmavatar/" + Spieler + "/60.png";
 
         mc.timolia(Spieler)
         .then(result => {
-            if (result.errors === "User not found") {
+            if (result.games === undefined || result.games[fixedGameMode] === undefined || result.errors === "User not found") {
                 const embed = new MessageEmbed()
                     .setDescription(`Es konnte keine Gewinnwahrscheinlichkeit von **${Spieler}** in **${Gamemode}** berechnet werden.`)
                     .setTimestamp(interaction.createdAt)
@@ -23,7 +24,6 @@ module.exports = {
                     .setColor("#ff0000");
                 interaction.reply({embeds: [embed]});
             } else {
-                const fixedGameMode = Gamemode === '1vs1' ? 'duels' : Gamemode;
                 const playedgames = result.games[fixedGameMode].games_played;
                 const gamesWon = result.games[fixedGameMode].games_won;
                 const winProbability = (gamesWon / playedgames * 100).toFixed(2);
