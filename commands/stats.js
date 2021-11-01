@@ -7,11 +7,11 @@ module.exports = {
     data: new SlashCommandBuilder()
         .setName('stats')
         .setDescription('Gibt dir die Statistiken von einem Spieler')
-        .addStringOption(option => option.setName('player').setDescription('Wähle den Spieler von welchem du die Statistiken sehen möchtest').setRequired(true))
-        .addStringOption(option => option.setName('gamemode').setDescription('Wähle den Spielmodus von welchem du die Statistiken sehen möchtest').setRequired(true)),
+        .addStringOption(option => option.setName('spieler').setDescription('Wähle den Spieler von welchem du die Statistiken sehen möchtest').setRequired(true))
+        .addStringOption(option => option.setName('spielmodus').setDescription('Wähle den Spielmodus von welchem du die Statistiken sehen möchtest').setRequired(true)),
     async execute(interaction, client) {
-        const spieler = interaction.options.getString('player');
-        const gamemode = interaction.options.getString('gamemode');
+        const spieler = interaction.options.getString('spieler');
+        const gamemode = interaction.options.getString('spielmodus');
 
         let spielerkopf = "https://cravatar.eu/helmavatar/" + spieler + "/60.png"
         const url = "https://timolia.de/stats/" + spieler;

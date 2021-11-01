@@ -6,9 +6,9 @@ module.exports = {
     data: new SlashCommandBuilder()
         .setName('top')
         .setDescription('Gibt dir die Toplisten eines bestimmten Spielmodus')
-        .addStringOption(option => option.setName('gamemode').setDescription('Wähle den Spielmodus von welchem du die Statistiken sehen möchtest').setRequired(true)),
+        .addStringOption(option => option.setName('spielmodus').setDescription('Wähle den Spielmodus von welchem du die Statistiken sehen möchtest').setRequired(true)),
     async execute(interaction, client) {
-        const gamemode = interaction.options.getString('gamemode').toLowerCase();
+        const gamemode = interaction.options.getString('spielmodus').toLowerCase();
 
         const options = {
             'method': 'GET',
@@ -33,7 +33,7 @@ module.exports = {
             if (raw.data === null) {
                 const fail = new MessageEmbed()
                     .setTitle(`Fehler`)
-                    .setDescription(`Es konnte keine Topliste für diesen Modus gefunden werden`)
+                    .setDescription(`Es konnte keine Topliste für ${gamemode} gefunden werden`)
                     .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
                     .setTimestamp(interaction.createdAt)
                     .setColor("#ff0000")
@@ -41,7 +41,7 @@ module.exports = {
             } else {
                 raw.data.forEach(d => {
                     embed.addFields({
-                        name: `${d.position}. ${d.name}`, value: `${d.points}`
+                        name: `${d.position}. ${d.name}`, value: `${d.points} Punkte`
                     })
                 })
                 interaction.reply({embeds: [embed]});
