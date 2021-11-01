@@ -40,8 +40,9 @@ module.exports = {
                 interaction.reply({embeds: [fail]});
             } else {
                 raw.data.forEach(d => {
+                    const punkte = d.sum_score || d.points;
                     embed.addFields({
-                        name: `${d.position}. ${d.name}`, value: `${d.points} Punkte`
+                        name: `${d.position}. ${d.name}`, value: `${punkte} Punkte`
                     })
                 })
                 interaction.reply({embeds: [embed]});
