@@ -1,5 +1,9 @@
 const util = require('minecraft-server-util');
-const Discord = require('discord.js');
+const { MessageActionRow, MessageButton, MessageEmbed } = require('discord.js');
+const fs = require("fs");
+const {REST} = require("@discordjs/rest");
+const {token, clientId} = require("../config.json");
+const {Routes} = require("discord-api-types/v9");
 
 module.exports = {
 	name: 'ready',
@@ -62,8 +66,40 @@ module.exports = {
 				});
 		},15000);
 
+
+		//Register Commands
+		setInterval(() => {
+			const commands = [];
+			const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+
+			// Fill Array -> To clear Command List //comment
+			for (const file of commandFiles) {
+				const command = require(`./commands/${file}`);
+				commands.push(command.data.toJSON());
+			}
+
+			const rest = new REST({ version: '9' }).setToken(token);
+
+			(async () => {
+				try {
+					await rest.put(
+						// Guild Commands
+						//Routes.applicationGuildCommand(clientId, guildId),
+
+						// Global Commands
+						Routes.applicationCommands(clientId),
+						{ body: commands },
+					);
+					console.log(commands)
+					console.log('Successfully registered application commands.');
+				} catch (error) {
+					console.error(error);
+				}
+			})();
+		},3600000);
+
 		//Discord Message
-		var embed = new Discord.MessageEmbed()
+		const embed = new MessageEmbed()
 			.setDescription(`Bot erfolgreich gestartet`)
 			.setTimestamp()
 			.setColor("#00FF00");
