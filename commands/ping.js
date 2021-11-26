@@ -4,7 +4,7 @@ const { MessageActionRow, MessageButton, MessageEmbed } = require('discord.js');
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('ping')
-		.setDescription('Checks the latency between command and answer'),
+		.setDescription('Misst die Latenz zwischen Bot und Discord API'),
 	async execute(interaction, client) {
 		const embed = new MessageEmbed()
 			.setTitle(`${client.user.username} • Ping`)
