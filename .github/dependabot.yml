@@ -10,3 +10,5 @@ updates:
     # assignees lennart to the pr
     assignees:
       - "l3nnartt"
+    # set pr limit
+    open-pull-requests-limit: 100
