@@ -4,7 +4,7 @@ const { token } = require('./config.json');
 
 //Intents
 const myIntents = new Intents();
-myIntents.add(Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MEMBERS);
+myIntents.add(Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MEMBERS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.DIRECT_MESSAGES);
 
 //Partials
 const myPartials = [];
@@ -46,7 +46,7 @@ client.on('interactionCreate', async interaction => {
 		const reply = new MessageEmbed()
 			.setTitle(`${client.user.username} • Error`)
 			.setTimestamp(interaction.createdAt)
-			.setFooter(`${client.user.username}`, client.user.displayAvatarURL())
+			.setFooter({ text: `${client.user.username}`, iconURL: client.user.displayAvatarURL() })
 			.setDescription(`An error has occurred. Please contact <@398101340322136075>!\n\n Error:\n \`\`\`${error}\`\`\``)
 			.setColor("#4680FC");
 		return interaction.reply({ephemeral: true, embeds: [reply]});
