@@ -1,9 +1,9 @@
 const util = require('minecraft-server-util');
 const { MessageActionRow, MessageButton, MessageEmbed } = require('discord.js');
 const fs = require("fs");
-const {REST} = require("@discordjs/rest");
-const {token, clientId} = require("../config.json");
-const {Routes} = require("discord-api-types/v9");
+const { REST } = require("@discordjs/rest");
+const { token, clientId } = require("../config.json");
+const { Routes } = require("discord-api-types/v9");
 
 module.exports = {
 	name: 'ready',

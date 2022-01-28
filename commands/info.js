@@ -8,8 +8,8 @@ module.exports = {
         .setDescription('Informationen über den Bot'),
     async execute(interaction, client) {
         const promises = [
-            client.shard.fetchClientValues('guilds.cache.size'),
-            client.shard.broadcastEval(c => c.guilds.cache.reduce((acc, guild) => acc + guild.memberCount, 0)),
+            await client.shard.fetchClientValues('guilds.cache.size'),
+            await client.shard.broadcastEval(c => c.guilds.cache.reduce((acc, guild) => acc + guild.memberCount, 0)),
         ];
 
         Promise.all(promises)
@@ -26,7 +26,7 @@ module.exports = {
                     { name: 'Version', value: `${config.version}`, inline: true},
                     { name: 'Entwickler', value: `<@398101340322136075>`, inline: true})
                 .setTimestamp(interaction.createdAt)
-                .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
+                .setFooter({ text: client.user.username, iconURL: client.user.displayAvatarURL() })
                 .setColor("#4680FC");
             return interaction.reply({embeds: [embed]});
         }).catch(console.error);

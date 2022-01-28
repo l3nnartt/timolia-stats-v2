@@ -26,7 +26,7 @@ module.exports = {
             const embed = new MessageEmbed()
                 .setTitle(`Top 10 • ${gamemode}`)
                 .setURL(`https://www.timolia.de/game/${gamemode}/leaderboard`)
-                .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
+                .setFooter({ text: client.user.username, iconURL: client.user.displayAvatarURL() })
                 .setTimestamp(interaction.createdAt)
                 .setColor("#4680FC")
 
@@ -34,7 +34,7 @@ module.exports = {
                 const fail = new MessageEmbed()
                     .setTitle(`Fehler`)
                     .setDescription(`Es konnte keine Topliste für ${gamemode} gefunden werden`)
-                    .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
+                    .setFooter({ text: client.user.username, iconURL: client.user.displayAvatarURL() })
                     .setTimestamp(interaction.createdAt)
                     .setColor("#ff0000")
                 interaction.reply({embeds: [fail]});

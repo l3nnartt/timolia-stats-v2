@@ -20,7 +20,7 @@ module.exports = {
             .setTitle(`${client.user.username} • Fehler`)
             .setDescription(`Es konnten keine Statistiken für **${spieler}** in **${gamemode}** gefunden werden.`)
             .setTimestamp(interaction.createdAt)
-            .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
+            .setFooter({ text: client.user.username, iconURL: client.user.displayAvatarURL() })
             .setColor("#4680FC");
 
         getStats(url, `${gamemode}`, data => {
@@ -29,7 +29,7 @@ module.exports = {
                 .setURL(`${url}`)
                 .setThumbnail(`${spielerkopf}`)
                 .setTimestamp(interaction.createdAt)
-                .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
+                .setFooter({ text: client.user.username, iconURL: client.user.displayAvatarURL() })
                 .setColor("#4680FC");
             data.forEach(d => {
                 embed.addFields(

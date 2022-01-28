@@ -17,11 +17,11 @@ module.exports = {
 				return;
 			} else {
 				//Discord Log
-				var embed = new Discord.MessageEmbed()
-					.setAuthor(`${message.author.tag}`, message.author.displayAvatarURL())
+				const embed = new Discord.MessageEmbed()
+					.setAuthor({ name: `${message.author.tag}`, iconURL: message.author.displayAvatarURL() })
 					.setDescription(`${message.content}`)
 					.setTimestamp(message.createdAt)
-					.setFooter(`${client.user.username} Log-System`)
+					.setFooter({ text: client.user.username, iconURL: client.user.displayAvatarURL() })
 					.setColor("#2a2a2a");
 				client.channels.cache.get('828385793528561694').send({embeds: [embed]});
 
@@ -34,10 +34,10 @@ module.exports = {
 			//Serverlist
 			if (message.content === `botinfo`) {
 				if (message.author.id === "398101340322136075") {
-					var botinfo = new Discord.MessageEmbed()
+					const botinfo = new Discord.MessageEmbed()
 						.setDescription(`Server: ${client.guilds.cache.size}`)
 						.setTimestamp(message.createdAt)
-						.setFooter(`${client.user.username}`)
+						.setFooter({ text: client.user.username, iconURL: client.user.displayAvatarURL() })
 						.setColor("#2a2a2a");
 
 					client.guilds.cache.forEach((guild) => {
@@ -51,10 +51,10 @@ module.exports = {
 					})
 					message.channel.send(botinfo);
 				} else {
-					var fehler = new Discord.MessageEmbed()
+					const fehler = new Discord.MessageEmbed()
 						.setDescription("Das darfst du nicht! :)")
 						.setTimestamp(message.createdAt)
-						.setFooter(`${client.user.username}`)
+						.setFooter({ text: client.user.username, iconURL: client.user.displayAvatarURL() })
 						.setColor("red");
 					client.channels.cache.get('828385793528561694').send({embeds: [fehler]});
 				}

@@ -18,7 +18,7 @@ module.exports = {
                         { name: `Aktuelle Spieler:`, value: `${response.onlinePlayers} / ${response.maxPlayers}`, inline: true },
                         { name: `Version:`, value: `${response.version}`})
                     .setTimestamp(interaction.createdAt)
-                    .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
+                    .setFooter({ text: client.user.username, iconURL: client.user.displayAvatarURL() })
                     .setColor("#00FF00");
                 interaction.reply({embeds: [embed]});
             })
@@ -28,7 +28,7 @@ module.exports = {
                     .addFields(
                         { name: `FEHLER/OFFLINE`, value: `Timolia ist zur Zeit nicht erreichbar!\nBitte versuche es in 5 Minuten erneut.` })
                     .setTimestamp(interaction.createdAt)
-                    .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
+                    .setFooter({ text: client.user.username, iconURL: client.user.displayAvatarURL() })
                     .setColor("#FF0000");
                 interaction.reply({embeds: [embed]});
                 throw error;

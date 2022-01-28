@@ -22,7 +22,7 @@ module.exports = {
                 [InTime Community](https://discord.gg/4b2Gg8h9cv)`
             )
             .setTimestamp(interaction.createdAt)
-            .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
+            .setFooter({ text: client.user.username, iconURL: client.user.displayAvatarURL() })
             .setColor("#1a8097");
         interaction.reply({embeds: [embed]});
     },
