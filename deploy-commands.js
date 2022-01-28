@@ -1,12 +1,12 @@
-const fs = require('fs');
 const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
-const { clientId, guildId, token } = require('./config.json');
+const { token, clientId, guildId } = require('./config.json');
+const fs = require('fs');
 
 const commands = [];
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
-// Fill Array -> To clear Command List //comment
+// Das hier auskommentieren um registrierte Commands zu clearen
 for (const file of commandFiles) {
     const command = require(`./commands/${file}`);
     commands.push(command.data.toJSON());
@@ -16,16 +16,18 @@ const rest = new REST({ version: '9' }).setToken(token);
 
 (async () => {
     try {
+        console.log('Started refreshing application (/) commands.');
+
         await rest.put(
             // Guild Commands
-            //Routes.applicationCommands(clientId),
+            //Routes.applicationGuildCommands(clientId, guildId),
 
             // Global Commands
             Routes.applicationCommands(clientId),
             { body: commands },
         );
-        console.log(commands)
-        console.log('Successfully registered application commands.');
+
+        console.log('Successfully reloaded application (/) commands.');
     } catch (error) {
         console.error(error);
     }
