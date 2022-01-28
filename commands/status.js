@@ -1,22 +1,22 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
-const { MessageActionRow, MessageButton, MessageEmbed } = require('discord.js');
+const { MessageEmbed } = require('discord.js');
 const util = require('minecraft-server-util');
 
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('status')
-        .setDescription('Sagt dir aktuelle Informationen zum Status von Timolia'),
+        .setDescription('Gibt dir aktuelle Informationen zu dem Status des Timolia Netzwerkes'),
     async execute(interaction, client) {
-        util.status(`timolia.de`, { port: 25565, enableSRV: true, timeout: 5000, protocolVersion: 47 })
+        util.status('timolia.de')
             .then((response) => {
                 const embed = new MessageEmbed()
                     .setTitle(`${client.user.username} • Status`)
                     .setThumbnail(`https://i.imgur.com/NkFEsHW.png`)
                     .addFields(
-                        { name: `IP-Adresse:`, value: `${response.host}`, inline: true },
-                        { name: `Port:`, value: `${response.port}`, inline: true },
-                        { name: `Aktuelle Spieler:`, value: `${response.onlinePlayers} / ${response.maxPlayers}`, inline: true },
-                        { name: `Version:`, value: `${response.version}`})
+                        { name: `IP-Adresse:`, value: `timolia.de`, inline: true },
+                        { name: `Port:`, value: `25565`, inline: true },
+                        { name: `Aktuelle Spieler:`, value: `${response.players.online} / ${response.players.max}`, inline: true },
+                        { name: `Version:`, value: `${response.version.name}`})
                     .setTimestamp(interaction.createdAt)
                     .setFooter({ text: client.user.username, iconURL: client.user.displayAvatarURL() })
                     .setColor("#00FF00");

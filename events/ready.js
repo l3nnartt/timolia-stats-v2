@@ -1,15 +1,11 @@
 const util = require('minecraft-server-util');
-const { MessageActionRow, MessageButton, MessageEmbed } = require('discord.js');
-const fs = require("fs");
-const { REST } = require("@discordjs/rest");
-const { token, clientId } = require("../config.json");
-const { Routes } = require("discord-api-types/v9");
+const { MessageEmbed } = require('discord.js');
 
 module.exports = {
 	name: 'ready',
 	once: true,
 	execute(client) {
-		//client.on(ready) Login-Konsole
+		// Login-Konsole
 		console.log(' ');
 		console.log('┌──────────────────────────────────── Login ─────────────────────────────────────────┐');
 		console.log(`│ > Eingeloggt als ${client.user.tag}!                                         │`);
@@ -43,7 +39,7 @@ module.exports = {
 			util.status('timolia.de')
 				.then((response) => {
 					const activities = [
-						`mit ${response.onlinePlayers} Spielern`
+						`mit ${response.players.online} Spielern`
 					];
 					let activity = activities[Math.floor(Math.random() * activities.length)];
 					client.user.setActivity(activity,
@@ -53,7 +49,7 @@ module.exports = {
 					);
 				})
 				.catch((error) => {
-					//console.error(error);
+					console.log(error)
 					const activities = [
 						`mit 0 Spielern`
 					];
