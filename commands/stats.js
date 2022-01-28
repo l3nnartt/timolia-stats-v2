@@ -1,5 +1,5 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
-const { MessageActionRow, MessageButton, MessageEmbed } = require('discord.js');
+const { MessageEmbed } = require('discord.js');
 const fetch = require('node-fetch');
 const DOMParser = require('dom-parser');
 
@@ -69,6 +69,7 @@ module.exports = {
                 });
                 onData(data);
             }).catch(function (err) {
+                console.log(err)
                 interaction.reply({embeds: [errorembed]});
             });
         }

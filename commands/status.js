@@ -25,8 +25,7 @@ module.exports = {
             .catch((error) => {
                 const embed = new MessageEmbed()
                     .setTitle(`${client.user.username} • Status`)
-                    .addFields(
-                        { name: `FEHLER/OFFLINE`, value: `Timolia ist zur Zeit nicht erreichbar!\nBitte versuche es in 5 Minuten erneut.` })
+                    .setDescription(`FEHLER/OFFLINE \n\n Timolia ist zur Zeit nicht erreichbar!\nBitte versuche es in 5 Minuten erneut.`)
                     .setTimestamp(interaction.createdAt)
                     .setFooter({ text: client.user.username, iconURL: client.user.displayAvatarURL() })
                     .setColor("#FF0000");
