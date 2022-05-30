@@ -49,7 +49,7 @@ module.exports = {
 					);
 				})
 				.catch((error) => {
-					console.log(error)
+					//console.log(error)
 					const activities = [
 						`mit 0 Spielern`
 					];
