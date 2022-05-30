@@ -1,5 +1,5 @@
-const { SlashCommandBuilder } = require('@discordjs/builders');
-const { MessageEmbed } = require('discord.js');
+const {SlashCommandBuilder} = require('@discordjs/builders');
+const {MessageEmbed} = require('discord.js');
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -22,7 +22,7 @@ module.exports = {
                 [InTime Community](https://discord.gg/4b2Gg8h9cv)`
             )
             .setTimestamp(interaction.createdAt)
-            .setFooter({ text: client.user.username, iconURL: client.user.displayAvatarURL() })
+            .setFooter({text: client.user.username, iconURL: client.user.displayAvatarURL()})
             .setColor("#1a8097");
         interaction.reply({embeds: [embed]});
     },

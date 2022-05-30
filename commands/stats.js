@@ -1,5 +1,5 @@
-const { SlashCommandBuilder } = require('@discordjs/builders');
-const { MessageEmbed } = require('discord.js');
+const {SlashCommandBuilder} = require('@discordjs/builders');
+const {MessageEmbed} = require('discord.js');
 const fetch = require('node-fetch');
 const DOMParser = require('dom-parser');
 
@@ -20,7 +20,7 @@ module.exports = {
             .setTitle(`${client.user.username} • Fehler`)
             .setDescription(`Es konnten keine Statistiken für **${spieler}** in **${gamemode}** gefunden werden.`)
             .setTimestamp(interaction.createdAt)
-            .setFooter({ text: client.user.username, iconURL: client.user.displayAvatarURL() })
+            .setFooter({text: client.user.username, iconURL: client.user.displayAvatarURL()})
             .setColor("#4680FC");
 
         getStats(url, `${gamemode}`, data => {
@@ -29,7 +29,7 @@ module.exports = {
                 .setURL(`${url}`)
                 .setThumbnail(`${spielerkopf}`)
                 .setTimestamp(interaction.createdAt)
-                .setFooter({ text: client.user.username, iconURL: client.user.displayAvatarURL() })
+                .setFooter({text: client.user.username, iconURL: client.user.displayAvatarURL()})
                 .setColor("#4680FC");
             data.forEach(d => {
                 embed.addFields(
@@ -41,7 +41,7 @@ module.exports = {
                 );
             });
 
-            if(data.length === 0) interaction.reply({embeds: [errorembed]});
+            if (data.length === 0) interaction.reply({embeds: [errorembed]});
             else return interaction.reply({embeds: [embed]});
         });
 

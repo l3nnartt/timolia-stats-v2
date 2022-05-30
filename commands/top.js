@@ -1,5 +1,5 @@
-const { SlashCommandBuilder } = require('@discordjs/builders');
-const { MessageEmbed } = require('discord.js');
+const {SlashCommandBuilder} = require('@discordjs/builders');
+const {MessageEmbed} = require('discord.js');
 const request = require("request");
 
 module.exports = {
@@ -19,14 +19,14 @@ module.exports = {
                 'Cookie': 'hl=de'
             }
         };
-        
+
         request(options, function (error, response) {
             if (error) throw new Error(error);
             const raw = JSON.parse(response.body);
             const embed = new MessageEmbed()
                 .setTitle(`Top 10 • ${gamemode}`)
                 .setURL(`https://www.timolia.de/game/${gamemode}/leaderboard`)
-                .setFooter({ text: client.user.username, iconURL: client.user.displayAvatarURL() })
+                .setFooter({text: client.user.username, iconURL: client.user.displayAvatarURL()})
                 .setTimestamp(interaction.createdAt)
                 .setColor("#4680FC")
 
@@ -34,7 +34,7 @@ module.exports = {
                 const fail = new MessageEmbed()
                     .setTitle(`Fehler`)
                     .setDescription(`Es konnte keine Topliste für ${gamemode} gefunden werden`)
-                    .setFooter({ text: client.user.username, iconURL: client.user.displayAvatarURL() })
+                    .setFooter({text: client.user.username, iconURL: client.user.displayAvatarURL()})
                     .setTimestamp(interaction.createdAt)
                     .setColor("#ff0000")
                 interaction.reply({embeds: [fail]});

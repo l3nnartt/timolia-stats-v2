@@ -1,5 +1,5 @@
-const { SlashCommandBuilder } = require('@discordjs/builders');
-const { MessageEmbed } = require('discord.js');
+const {SlashCommandBuilder} = require('@discordjs/builders');
+const {MessageEmbed} = require('discord.js');
 const mc = require("mc-stats");
 
 module.exports = {
@@ -16,7 +16,7 @@ module.exports = {
             .setTitle(`${client.user.username} • Fehler`)
             .setDescription(`Es konnten keine Informationen für **${player}** gefunden werden.`)
             .setTimestamp(interaction.createdAt)
-            .setFooter({ text: client.user.username, iconURL: client.user.displayAvatarURL() })
+            .setFooter({text: client.user.username, iconURL: client.user.displayAvatarURL()})
             .setColor("#4680FC");
 
         mc.timolia(player).then(result => {
@@ -27,13 +27,13 @@ module.exports = {
                 .setURL(`${url}`)
                 .setThumbnail(`${playerhead}`)
                 .addFields(
-                    { name: `Name`, value: `${result.name}` },
-                    { name: `Rang`, value: `${result.rank}` },
-                    { name: `Beitritt`, value: `${result.firstLogin.toDateString()}` },
-                    { name: `Freunde`, value: `${result.friends}` },
-                    { name: `Karma`, value: `${result.karma}` })
+                    {name: `Name`, value: `${result.name}`},
+                    {name: `Rang`, value: `${result.rank}`},
+                    {name: `Beitritt`, value: `${result.firstLogin.toDateString()}`},
+                    {name: `Freunde`, value: `${result.friends}`},
+                    {name: `Karma`, value: `${result.karma}`})
                 .setTimestamp(interaction.createdAt)
-                .setFooter({ text: client.user.username, iconURL: client.user.displayAvatarURL() })
+                .setFooter({text: client.user.username, iconURL: client.user.displayAvatarURL()})
                 .setColor("#4680FC");
             interaction.reply({embeds: [userinfo]});
         });

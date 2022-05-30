@@ -1,5 +1,5 @@
-const { SlashCommandBuilder } = require('@discordjs/builders');
-const { MessageEmbed } = require('discord.js');
+const {SlashCommandBuilder} = require('@discordjs/builders');
+const {MessageEmbed} = require('discord.js');
 const mc = require("mc-stats");
 
 module.exports = {
@@ -15,27 +15,27 @@ module.exports = {
         let playerhead = "https://cravatar.eu/helmavatar/" + player + "/60.png";
 
         mc.timolia(player)
-        .then(result => {
-            if (result.games === undefined || result.games[fixedGameMode] === undefined || result.errors === "User not found") {
-                const embed = new MessageEmbed()
-                    .setDescription(`Es konnte keine Gewinnwahrscheinlichkeit von **${player}** in **${gamemode}** berechnet werden.`)
-                    .setTimestamp(interaction.createdAt)
-                    .setFooter({ text: client.user.username, iconURL: client.user.displayAvatarURL() })
-                    .setColor("#ff0000");
-                interaction.reply({embeds: [embed]});
-            } else {
-                const playedgames = result.games[fixedGameMode].games_played;
-                const gamesWon = result.games[fixedGameMode].games_won;
-                const winProbability = (gamesWon / playedgames * 100).toFixed(2);
-                const embed = new MessageEmbed()
-                    .setTitle(`${client.user.username} • Gewinnwahrscheinlichkeit`)
-                    .setThumbnail(`${playerhead}`)
-                    .setDescription(`Der Spieler **${player}** hat in **${gamemode}** eine Gewinnwahrscheinlichkeit von **${winProbability}%**`)
-                    .setTimestamp(interaction.createdAt)
-                    .setFooter({ text: client.user.username, iconURL: client.user.displayAvatarURL() })
-                    .setColor("#4680FC");
-                interaction.reply({embeds: [embed]});
-            }
-        })
+            .then(result => {
+                if (result.games === undefined || result.games[fixedGameMode] === undefined || result.errors === "User not found") {
+                    const embed = new MessageEmbed()
+                        .setDescription(`Es konnte keine Gewinnwahrscheinlichkeit von **${player}** in **${gamemode}** berechnet werden.`)
+                        .setTimestamp(interaction.createdAt)
+                        .setFooter({text: client.user.username, iconURL: client.user.displayAvatarURL()})
+                        .setColor("#ff0000");
+                    interaction.reply({embeds: [embed]});
+                } else {
+                    const playedgames = result.games[fixedGameMode].games_played;
+                    const gamesWon = result.games[fixedGameMode].games_won;
+                    const winProbability = (gamesWon / playedgames * 100).toFixed(2);
+                    const embed = new MessageEmbed()
+                        .setTitle(`${client.user.username} • Gewinnwahrscheinlichkeit`)
+                        .setThumbnail(`${playerhead}`)
+                        .setDescription(`Der Spieler **${player}** hat in **${gamemode}** eine Gewinnwahrscheinlichkeit von **${winProbability}%**`)
+                        .setTimestamp(interaction.createdAt)
+                        .setFooter({text: client.user.username, iconURL: client.user.displayAvatarURL()})
+                        .setColor("#4680FC");
+                    interaction.reply({embeds: [embed]});
+                }
+            })
     },
 };
