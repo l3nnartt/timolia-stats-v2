@@ -1,4 +1,5 @@
 const {MessageEmbed} = require('discord.js');
+const {logChannel} = require('../config.json');
 
 module.exports = {
     name: 'messageCreate',
@@ -11,7 +12,7 @@ module.exports = {
                 .setTimestamp(message.createdAt)
                 .setFooter({text: client.user.username, iconURL: client.user.displayAvatarURL()})
                 .setColor("#2a2a2a");
-            client.channels.cache.get('828385793528561694').send({embeds: [embed]});
+            client.channels.cache.get(logChannel).send({embeds: [embed]});
         }
     },
 };

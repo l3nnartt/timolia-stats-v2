@@ -2,5 +2,6 @@
   "token": "TOKEN",
   "version": "VERSION",
   "clientId": "CLIENT_ID",
-  "guildId": "GUILD_ID"
+  "guildId": "GUILD_ID",
+  "logChannel": "LOGCHANNEL_ID"
 }
