@@ -3,3 +3,5 @@ services:
   timolia-stats:
     image: "ghcr.io/l3nnartt/timolia-stats:main"
     restart: always
+    volumes:
+      - .\config.json:/bot/config.json
