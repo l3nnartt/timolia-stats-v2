@@ -1,5 +1,4 @@
-const {SlashCommandBuilder} = require('@discordjs/builders');
-const {MessageEmbed} = require('discord.js');
+const { SlashCommandBuilder, EmbedBuilder, Colors} = require('discord.js');
 const fetch = require('node-fetch');
 const DOMParser = require('dom-parser');
 
@@ -10,24 +9,24 @@ module.exports = {
         .addStringOption(option => option.setName('spieler').setDescription('Wähle den Spieler von welchem du die Statistiken sehen möchtest').setRequired(true))
         .addStringOption(option => option.setName('spielmodus').setDescription('Wähle den Spielmodus von welchem du die Statistiken sehen möchtest').setRequired(true)),
     async execute(interaction, client) {
-        const spieler = interaction.options.getString('spieler');
+        const player = interaction.options.getString('spieler');
         const gamemode = interaction.options.getString('spielmodus');
 
-        let spielerkopf = "https://cravatar.eu/helmavatar/" + spieler + "/60.png"
-        const url = "https://timolia.de/stats/" + spieler;
+        let playerHead = "https://cravatar.eu/helmavatar/" + player + "/60.png"
+        const url = "https://timolia.de/stats/" + player;
 
-        const errorembed = new MessageEmbed()
-            .setTitle(`${client.user.username} • Fehler`)
-            .setDescription(`Es konnten keine Statistiken für **${spieler}** in **${gamemode}** gefunden werden.`)
+        const errorEmbed = new EmbedBuilder()
+            .setTitle(`${client.user.username} • Error`)
+            .setDescription(`Es konnten keine Statistiken für **${player}** in **${gamemode}** gefunden werden.`)
             .setTimestamp(interaction.createdAt)
             .setFooter({text: client.user.username, iconURL: client.user.displayAvatarURL()})
-            .setColor("#4680FC");
+            .setColor(Colors.DarkRed);
 
         getStats(url, `${gamemode}`, data => {
-            const embed = new MessageEmbed()
-                .setTitle(`${gamemode} • ${spieler}`)
+            const embed = new EmbedBuilder()
+                .setTitle(`${gamemode} • ${player}`)
                 .setURL(`${url}`)
-                .setThumbnail(`${spielerkopf}`)
+                .setThumbnail(`${playerHead}`)
                 .setTimestamp(interaction.createdAt)
                 .setFooter({text: client.user.username, iconURL: client.user.displayAvatarURL()})
                 .setColor("#4680FC");
@@ -41,7 +40,7 @@ module.exports = {
                 );
             });
 
-            if (data.length === 0) interaction.reply({embeds: [errorembed]});
+            if (data.length === 0) interaction.reply({embeds: [errorEmbed]});
             else return interaction.reply({embeds: [embed]});
         });
 
@@ -70,7 +69,7 @@ module.exports = {
                 onData(data);
             }).catch(function (err) {
                 console.log(err)
-                interaction.reply({embeds: [errorembed]});
+                interaction.reply({embeds: [errorEmbed]});
             });
         }
     },

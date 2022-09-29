@@ -1,6 +1,6 @@
 const util = require('minecraft-server-util');
-const {MessageEmbed} = require('discord.js');
-const {logChannel} = require('../config.json');
+const { EmbedBuilder } = require('discord.js');
+const { logChannel } = require('../config.json');
 
 module.exports = {
     name: 'ready',
@@ -64,8 +64,8 @@ module.exports = {
         }, 15000);
 
         //Discord Message
-        const embed = new MessageEmbed()
-            .setDescription(`Bot erfolgreich gestartet`)
+        const embed = new EmbedBuilder()
+            .setDescription(`Bot started!`)
             .setTimestamp()
             .setColor("#00FF00");
         client.channels.cache.get(logChannel).send({embeds: [embed]});
