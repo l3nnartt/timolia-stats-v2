@@ -1,14 +1,15 @@
 const fs = require('fs');
-const {Client, Collection, Intents, MessageActionRow, MessageButton, MessageEmbed} = require('discord.js');
-const {token} = require('./config.json');
+const { Client, Collection, MessageEmbed, Partials } = require('discord.js');
+const { token } = require('./config.json');
+const { GatewayIntentBits } = require("discord-api-types/v10");
 
 //Intents
-const myIntents = new Intents();
-myIntents.add(Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MEMBERS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.DIRECT_MESSAGES);
+const myIntents = []
+myIntents.push(GatewayIntentBits.Guilds, GatewayIntentBits.GuildMembers, GatewayIntentBits.GuildMessages, GatewayIntentBits.DirectMessages);
 
 //Partials
 const myPartials = [];
-myPartials.push('MESSAGE', 'GUILD_MEMBER', 'CHANNEL');
+myPartials.push(Partials.Message, Partials.GuildMember, Partials.Channel);
 
 const client = new Client({intents: myIntents, partials: myPartials});
 client.commands = new Collection();
