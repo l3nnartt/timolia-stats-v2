@@ -1,0 +1,5 @@
+version: "3"
+services:
+  timolia-stats:
+    image: "ghcr.io/l3nnartt/timolia-stats:main"
+    restart: always
