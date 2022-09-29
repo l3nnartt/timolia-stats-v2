@@ -1,5 +1,4 @@
-const {SlashCommandBuilder} = require('@discordjs/builders');
-const {MessageEmbed} = require('discord.js');
+const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 const request = require("request");
 
 module.exports = {
@@ -23,7 +22,7 @@ module.exports = {
         request(options, function (error, response) {
             if (error) throw new Error(error);
             const raw = JSON.parse(response.body);
-            const embed = new MessageEmbed()
+            const embed = new EmbedBuilder()
                 .setTitle(`Top 10 • ${gamemode}`)
                 .setURL(`https://www.timolia.de/game/${gamemode}/leaderboard`)
                 .setFooter({text: client.user.username, iconURL: client.user.displayAvatarURL()})
@@ -31,7 +30,7 @@ module.exports = {
                 .setColor("#4680FC")
 
             if (raw.data === null) {
-                const fail = new MessageEmbed()
+                const fail = new EmbedBuilder()
                     .setTitle(`Fehler`)
                     .setDescription(`Es konnte keine Topliste für ${gamemode} gefunden werden`)
                     .setFooter({text: client.user.username, iconURL: client.user.displayAvatarURL()})

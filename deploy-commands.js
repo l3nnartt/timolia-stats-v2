@@ -1,18 +1,18 @@
-const {REST} = require('@discordjs/rest');
-const {Routes} = require('discord-api-types/v9');
-const {token, clientId, guildId} = require('./config.json');
+const { REST } = require('@discordjs/rest');
+const { Routes } = require('discord.js');
+const { clientId, guildId, token } = require('./config.json');
 const fs = require('fs');
 
 const commands = [];
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
-// Das hier auskommentieren um registrierte Commands zu clearen
+// Fill Array -> To clear Command List //comment
 for (const file of commandFiles) {
     const command = require(`./commands/${file}`);
     commands.push(command.data.toJSON());
 }
 
-const rest = new REST({version: '9'}).setToken(token);
+const rest = new REST({ version: '10' }).setToken(token);
 
 (async () => {
     try {
@@ -24,9 +24,11 @@ const rest = new REST({version: '9'}).setToken(token);
 
             // Global Commands
             Routes.applicationCommands(clientId),
-            {body: commands},
+            { body: commands },
         );
 
+        console.log('Commands:')
+        console.log(commands)
         console.log('Successfully reloaded application (/) commands.');
     } catch (error) {
         console.error(error);

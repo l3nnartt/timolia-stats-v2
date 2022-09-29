@@ -1,5 +1,4 @@
-const {SlashCommandBuilder} = require('@discordjs/builders');
-const {MessageEmbed} = require('discord.js');
+const { MessageEmbed, SlashCommandBuilder, EmbedBuilder} = require('discord.js');
 const mc = require("mc-stats");
 
 module.exports = {
@@ -12,7 +11,7 @@ module.exports = {
         const playerhead = "https://mineskin.de/armor/body/" + player + "/200.png";
         const url = "https://www.timolia.de/stats/" + player;
 
-        const notfound = new MessageEmbed()
+        const notfound = new EmbedBuilder()
             .setTitle(`${client.user.username} • Fehler`)
             .setDescription(`Es konnten keine Informationen für **${player}** gefunden werden.`)
             .setTimestamp(interaction.createdAt)
@@ -22,7 +21,7 @@ module.exports = {
         mc.timolia(player).then(result => {
             if (!result.name) return interaction.reply({embeds: [notfound]});
 
-            const userinfo = new MessageEmbed()
+            const userinfo = new EmbedBuilder()
                 .setTitle(`${client.user.username} • Userinfo für ${result.name}`)
                 .setURL(`${url}`)
                 .setThumbnail(`${playerhead}`)

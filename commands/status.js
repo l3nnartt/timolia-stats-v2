@@ -1,5 +1,4 @@
-const {SlashCommandBuilder} = require('@discordjs/builders');
-const {MessageEmbed} = require('discord.js');
+const { EmbedBuilder, SlashCommandBuilder} = require('discord.js');
 const util = require('minecraft-server-util');
 
 module.exports = {
@@ -9,7 +8,7 @@ module.exports = {
     async execute(interaction, client) {
         util.status('timolia.de')
             .then((response) => {
-                const embed = new MessageEmbed()
+                const embed = new EmbedBuilder()
                     .setTitle(`${client.user.username} • Status`)
                     .setThumbnail(`https://i.imgur.com/NkFEsHW.png`)
                     .addFields(
@@ -27,7 +26,7 @@ module.exports = {
                 interaction.reply({embeds: [embed]});
             })
             .catch((error) => {
-                const embed = new MessageEmbed()
+                const embed = new EmbedBuilder()
                     .setTitle(`${client.user.username} • Status`)
                     .setDescription(`FEHLER/OFFLINE \n\n Timolia ist zur Zeit nicht erreichbar!\nBitte versuche es in 5 Minuten erneut.`)
                     .setTimestamp(interaction.createdAt)

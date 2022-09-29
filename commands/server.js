@@ -1,12 +1,11 @@
-const {SlashCommandBuilder} = require('@discordjs/builders');
-const {MessageEmbed} = require('discord.js');
+const { SlashCommandBuilder, EmbedBuilder, Colors} = require('discord.js');
 
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('server')
         .setDescription('Gibt dir eine Liste über alle Timolia Community Discord Server'),
     async execute(interaction, client) {
-        const embed = new MessageEmbed()
+        const embed = new EmbedBuilder()
             .setTitle(`${client.user.username} • Community Server`)
             .setThumbnail(client.user.displayAvatarURL())
             .setDescription(`
@@ -23,7 +22,7 @@ module.exports = {
             )
             .setTimestamp(interaction.createdAt)
             .setFooter({text: client.user.username, iconURL: client.user.displayAvatarURL()})
-            .setColor("#1a8097");
+            .setColor(Colors.Blurple);
         interaction.reply({embeds: [embed]});
     },
 };

@@ -1,5 +1,4 @@
-const {SlashCommandBuilder} = require('@discordjs/builders');
-const {MessageEmbed} = require('discord.js');
+const { EmbedBuilder, SlashCommandBuilder} = require('discord.js');
 const mc = require("mc-stats");
 
 module.exports = {
@@ -17,7 +16,7 @@ module.exports = {
         mc.timolia(player)
             .then(result => {
                 if (result.games === undefined || result.games[fixedGameMode] === undefined || result.errors === "User not found") {
-                    const embed = new MessageEmbed()
+                    const embed = new EmbedBuilder()
                         .setDescription(`Es konnte keine Gewinnwahrscheinlichkeit von **${player}** in **${gamemode}** berechnet werden.`)
                         .setTimestamp(interaction.createdAt)
                         .setFooter({text: client.user.username, iconURL: client.user.displayAvatarURL()})
@@ -27,7 +26,7 @@ module.exports = {
                     const playedgames = result.games[fixedGameMode].games_played;
                     const gamesWon = result.games[fixedGameMode].games_won;
                     const winProbability = (gamesWon / playedgames * 100).toFixed(2);
-                    const embed = new MessageEmbed()
+                    const embed = new EmbedBuilder()
                         .setTitle(`${client.user.username} • Gewinnwahrscheinlichkeit`)
                         .setThumbnail(`${playerhead}`)
                         .setDescription(`Der Spieler **${player}** hat in **${gamemode}** eine Gewinnwahrscheinlichkeit von **${winProbability}%**`)
