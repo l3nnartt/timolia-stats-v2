@@ -47,7 +47,7 @@ client.on('interactionCreate', async interaction => {
         const reply = new MessageEmbed()
             .setTitle(`${client.user.username} • Error`)
             .setTimestamp(interaction.createdAt)
-            .setFooter({text: `${client.user.username}`, iconURL: client.user.displayAvatarURL()})
+            .setFooter({text: client.user.username, iconURL: client.user.displayAvatarURL()})
             .setDescription(`An error has occurred. Please contact <@398101340322136075>!\n\n Error:\n \`\`\`${error}\`\`\``)
             .setColor("#4680FC");
         return interaction.reply({ephemeral: true, embeds: [reply]});
