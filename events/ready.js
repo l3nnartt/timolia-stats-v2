@@ -1,6 +1,7 @@
 const util = require('minecraft-server-util');
 const { EmbedBuilder } = require('discord.js');
 const { logChannel } = require('../config.json');
+const { ActivityType } = require("discord-api-types/v10");
 
 module.exports = {
     name: 'ready',
@@ -37,29 +38,13 @@ module.exports = {
 
         //Rich Presence/RPC
         setInterval(() => {
-            util.status('timolia.de')
+            util.status('play.timolia.de')
                 .then((response) => {
-                    const activities = [
-                        `mit ${response.players.online} Spielern`
-                    ];
-                    let activity = activities[Math.floor(Math.random() * activities.length)];
-                    client.user.setActivity(activity,
-                        {
-                            type: "PLAYING"
-                        }
-                    );
+                    client.user.setActivity(`mit ${response.players.online} Spielern`, { type: ActivityType.Playing });
                 })
                 .catch((error) => {
-                    //console.log(error)
-                    const activities = [
-                        `mit 0 Spielern`
-                    ];
-                    let activity = activities[Math.floor(Math.random() * activities.length)];
-                    client.user.setActivity(activity,
-                        {
-                            type: "PLAYING"
-                        }
-                    );
+                    console.log(error)
+                    client.user.setActivity(`mit 0 Spielern`, { type: ActivityType.Playing });
                 });
         }, 15000);
 
