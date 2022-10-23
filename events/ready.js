@@ -43,7 +43,7 @@ module.exports = {
                     client.user.setActivity(`mit ${response.players.online} Spielern`, { type: ActivityType.Playing });
                 })
                 .catch((error) => {
-                    console.log(error)
+                    //console.log(error)
                     client.user.setActivity(`mit 0 Spielern`, { type: ActivityType.Playing });
                 });
         }, 15000);
