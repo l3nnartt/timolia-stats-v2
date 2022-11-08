@@ -1,6 +1,6 @@
 {
   "token": "TOKEN",
-  "version": "VERSION",
+  "version": "4.2.0",
   "clientId": "CLIENT_ID",
   "guildId": "GUILD_ID",
   "logChannel": "LOGCHANNEL_ID"

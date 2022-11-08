@@ -40,11 +40,11 @@ module.exports = {
         setInterval(() => {
             util.status('play.timolia.de')
                 .then((response) => {
-                    client.user.setActivity(`mit ${response.players.online} Spielern`, { type: ActivityType.Playing });
+                    client.user.setActivity(`mit ${response.players.online} Personen`, { type: ActivityType.Playing });
                 })
                 .catch((error) => {
                     //console.log(error)
-                    client.user.setActivity(`mit 0 Spielern`, { type: ActivityType.Playing });
+                    client.user.setActivity(`mit 0 Personen`, { type: ActivityType.Playing });
                 });
         }, 15000);
 
