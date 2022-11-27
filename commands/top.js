@@ -38,12 +38,10 @@ module.exports = {
                     .setColor("#ff0000")
                 interaction.reply({embeds: [fail]});
             } else {
-                raw.data.forEach(d => {
-                    const punkte = d.sum_score || d.points;
-                    embed.addFields({
-                        name: `${d.position}. ${d.name}`, value: `${punkte} Punkte`
-                    })
-                })
+                for (let i = 0; i < 10; i++) {
+                    const punkte = raw.data[i].sum_score || raw.data[i].points;
+                    embed.addFields({name: `${raw.data[i].position}. ${raw.data[i].name}`, value: `${punkte} Punkte`})
+                }
                 interaction.reply({embeds: [embed]});
             }
         });
